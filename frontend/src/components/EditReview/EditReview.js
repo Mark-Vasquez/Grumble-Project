@@ -4,11 +4,11 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 
-import { createReview } from "../../store/review";
+import { updateReview } from "../../store/review";
 
 const Ratings = [1, 2, 3, 4, 5];
 
-const Review = () => {
+const EditReview = () => {
 	const history = useHistory();
 	const { business_id } = useParams();
 	const user_Id = useSelector((state) => state.session.user.id);
@@ -27,13 +27,13 @@ const Review = () => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		dispatch(createReview(business_id, user_Id, { rating, answer }));
+		dispatch(updateReview(business_id, user_Id, { rating, answer }));
 		history.push(`/businesses/${business_id}`);
 	};
 
 	return (
 		<div>
-			<h2>Write a Review</h2>
+			<h2>Edit Your Review</h2>
 			<form onSubmit={onSubmit}>
 				<ul>
 					{errors.map((error) => (
@@ -65,4 +65,4 @@ const Review = () => {
 	);
 };
 
-export default Review;
+export default EditReview;

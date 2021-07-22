@@ -14,10 +14,8 @@ const HomePage = () => {
 					<div>Search Bar</div>
 				</div>
 			</div>
-			<div className={styles.mid_page}></div>
-			<div className={styles.footer_div}>
-				<div className={styles.footer_image}></div>
-			</div>
+			<div className={styles.mid_page}>hello</div>
+			<div className={styles.footer_div}></div>
 		</>
 	);
 };

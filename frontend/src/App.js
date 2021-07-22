@@ -4,11 +4,12 @@ import { Route, Switch } from "react-router-dom";
 import LoginFormPage from "./components/LoginFormPage";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
-import Navigation from "./components/Navigation";
+// import Navigation from "./components/Navigation";
 import Businesses from "./components/Businesses";
 import BusinessPage from "./components/BusinessPage";
 import Review from "./components/ReviewForm";
 import HomePage from "./components/HomePage";
+import EditReview from "./components/EditReview";
 
 function App() {
 	const dispatch = useDispatch();
@@ -32,6 +33,9 @@ function App() {
 					</Route>
 					<Route path="/businesses/:business_id/reviews/new">
 						<Review />
+					</Route>
+					<Route>
+						<EditReview path="/businesses/:business_id/reviews/edit" />
 					</Route>
 					<Route path="/businesses/:id">
 						<BusinessPage />

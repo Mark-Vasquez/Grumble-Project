@@ -24,6 +24,9 @@
   },
   "homepage": "https://github.com/Mark-Vasquez/solo-project-react#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "redux": "^4.1.0"
   }
 }

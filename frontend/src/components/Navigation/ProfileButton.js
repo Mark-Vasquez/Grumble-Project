@@ -32,7 +32,7 @@ function ProfileButton({ user }) {
 	return (
 		<>
 			<button className={styles.nav_btn} onClick={openMenu}>
-				<i className="fas fa-american-sign-language-interpreting"></i>
+				<i class="fad fa-pizza-slice"></i>
 			</button>
 			{showMenu && (
 				<ul className="profile-dropdown">

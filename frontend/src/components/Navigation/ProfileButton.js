@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
+import styles from "./Navigation.module.css";
 
 function ProfileButton({ user }) {
 	const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function ProfileButton({ user }) {
 
 	return (
 		<>
-			<button onClick={openMenu}>
+			<button className={styles.nav_btn} onClick={openMenu}>
 				<i className="fas fa-american-sign-language-interpreting"></i>
 			</button>
 			{showMenu && (

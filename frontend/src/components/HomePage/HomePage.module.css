@@ -1,0 +1,16 @@
+.banner {
+	display: flex;
+	background-image: url("./homeSplash.jpg");
+	background-repeat: no-repeat;
+	justify-content: center;
+	background-size: cover;
+	width: 100%;
+	height: 575px;
+	margin: 0;
+}
+
+.inner_middle_banner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

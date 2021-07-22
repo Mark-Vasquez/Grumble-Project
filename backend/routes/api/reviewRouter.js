@@ -32,7 +32,7 @@ const validateReview = [
 
 // comment back in app.use(csurf) in app.js
 router.post(
-	"/:business_id/:user_id/reviews",
+	"/:business_id/:user_id/reviews/new",
 	requireAuth,
 	validateReview,
 	asyncHandler(async (req, res, next) => {
@@ -45,6 +45,16 @@ router.post(
 			rating,
 			answer,
 		});
+	})
+);
+
+router.put(
+	"/:business_id/:user_id/reviews/edit",
+	requireAuth,
+	validateReview,
+	asyncHandler(async (req, res, next) => {
+		const userId = req.params.user_id;
+		const businessId = req.params.business_id;
 	})
 );
 

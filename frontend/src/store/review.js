@@ -9,7 +9,7 @@ const postReview = (review) => ({
 export const createReview =
 	(business_id, user_id, form) => async (dispatch) => {
 		const res = await csrfFetch(
-			`/api/business/${business_id}/${user_id}/reviews`,
+			`/api/business/${business_id}/${user_id}/reviews/new`,
 			{
 				method: "POST",
 				headers: { "Content-Type": "application/json" },

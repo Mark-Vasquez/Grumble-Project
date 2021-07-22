@@ -7,7 +7,8 @@ import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import Businesses from "./components/Businesses";
 import BusinessPage from "./components/BusinessPage";
-import Review from "./components/ReviewForm/ReviewForm";
+import Review from "./components/ReviewForm";
+import HomePage from "./components/HomePage";
 
 function App() {
 	const dispatch = useDispatch();
@@ -21,13 +22,16 @@ function App() {
 			<Navigation isLoaded={isLoaded} />
 			{isLoaded && (
 				<Switch>
+					<Route exact path="/">
+						<HomePage />
+					</Route>
 					<Route path="/login">
 						<LoginFormPage />
 					</Route>
 					<Route path="/signup">
 						<SignupFormPage />
 					</Route>
-					<Route path="/businesses/:business_id/reviews">
+					<Route path="/businesses/:business_id/reviews/new">
 						<Review />
 					</Route>
 					<Route path="/businesses/:id">

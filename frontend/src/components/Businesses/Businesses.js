@@ -1,6 +1,8 @@
 // import hooks from react and react-redux
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 //import thunk creator from store
 import { fetchBusinesses } from "../../store/business";
@@ -23,7 +25,11 @@ const Businesses = () => {
 		<div>
 			<ul>
 				{businesses.map((business) => (
-					<li key={business.id}>{business.title}</li>
+					<li>
+						<Link to={`/businesses/${business.id}`} key={business.id}>
+							{business.title}
+						</Link>
+					</li>
 				))}
 			</ul>
 		</div>

@@ -53,8 +53,8 @@ router.post(
 //reviews where business id matches id that is passed in
 router.get(
 	"/:business_id/reviews",
-	requireAuth,
-	validateReview,
+	// requireAuth,
+	// validateReview,
 	asyncHandler(async (req, res, next) => {
 		const business_id = req.params.business_id;
 		const reviews = await Review.findAll({

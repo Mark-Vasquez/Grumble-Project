@@ -25,17 +25,22 @@ const BusinessPage = () => {
 	return (
 		<div>
 			<div className={styles.navbar}>
+				<div className={styles.right_nav}></div>
+				<Navigation />
+				<div className={styles.mid_nav}>
+					<div className={styles.search}></div>
+				</div>
 				<div className={styles.left_nav}>
 					<Link to="/">
 						<div className={styles.logo}></div>
 					</Link>
 				</div>
-				<div className={styles.mid_nav}>
-					<div className={styles.search}></div>
-				</div>
-				<div className={styles.right_nav}>
-					<Navigation className={styles.nav} />
-				</div>
+			</div>
+			<div className={styles.pic_container}>
+				<div className={styles.picOne}></div>
+				<div className={styles.picTwo}></div>
+				<div className={styles.picThree}></div>
+				<div className={styles.picFour}></div>
 			</div>
 			<h2>{businessPage.title}</h2>
 			<p>{businessPage.description}</p>

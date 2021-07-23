@@ -11,6 +11,12 @@ const ReviewsDisplay = () => {
 	const dispatch = useDispatch();
 	const reviews = useSelector((state) => state.review);
 
+	// reviews into array and map through in jsx to show each review
+
+	// console.log(reviews.rating);
+	console.log("reviews!!", reviews);
+	// compare 2 ids
+
 	useEffect(() => {
 		dispatch(fetchReviews(business_id));
 	}, [dispatch, business_id]);
@@ -18,6 +24,7 @@ const ReviewsDisplay = () => {
 
 	return (
 		<div>
+			<h2>hello</h2>
 			<h2>{reviews.rating}</h2>
 			<p>{reviews.answer}</p>
 		</div>

@@ -20,7 +20,7 @@ const editReview = (review) => ({
 
 // thunks make request to the api to GET reviews
 export const fetchReviews = (business_id) => async (dispatch) => {
-	const res = await csrfFetch(`/${business_id}/reviews`);
+	const res = await csrfFetch(`/api/business/${business_id}/reviews`);
 	const reviews = await res.json();
 	dispatch(getReview(reviews)); // pass in reviews retrieved from database
 };
@@ -65,12 +65,15 @@ const initialState = {};
 const reviewReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case GET_REVIEWS:
-			return {
+			let newState = {
 				...state,
-				...Object.fromEntries(
-					action.reviews.map((review) => [review.id, review])
-				),
 			};
+			// console.log("newstate!!", newState);
+			action.reviews.forEach((review) => {
+				newState[review.id] = review;
+			});
+			// console.log("NewState!", newState);
+			return newState;
 		case POST_REVIEW:
 			return {
 				...state,

@@ -10,6 +10,7 @@ import BusinessPage from "./components/BusinessPage";
 import Review from "./components/ReviewForm";
 import HomePage from "./components/HomePage";
 import EditReview from "./components/EditReview";
+import ReviewsDisplay from "./components/ReviewsDisplay";
 
 function App() {
 	const dispatch = useDispatch();
@@ -31,13 +32,16 @@ function App() {
 					<Route path="/signup">
 						<SignupFormPage />
 					</Route>
+					<Route path="/businesses/:business_id/reviews">
+						<ReviewsDisplay />
+					</Route>
 					<Route path="/businesses/:business_id/reviews/new">
 						<Review />
 					</Route>
-					<Route>
-						<EditReview path="/businesses/:business_id/reviews/edit" />
+					<Route path="/review/edit/:id">
+						<EditReview />
 					</Route>
-					<Route path="/businesses/:id">
+					<Route path="/businesses/:business_id">
 						<BusinessPage />
 					</Route>
 					<Route path="/businesses">

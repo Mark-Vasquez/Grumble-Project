@@ -1,0 +1,25 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	height: 75px;
+	align-items: center;
+	margin: 0 auto;
+	min-width: 530px;
+	background-color: rgb(213, 64, 64);
+}
+
+.logo {
+	background-image: url("../../images/Grumble-Logo.png");
+	width: 60px;
+	height: 60px;
+	background-size: cover;
+	border-radius: 5px;
+	margin-left: 30px;
+}
+
+.mid_nav {
+	background-color: whitesmoke;
+	width: 200px;
+	height: 40px;
+	border-radius: 5px;
+}

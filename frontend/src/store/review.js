@@ -1,6 +1,12 @@
 import { csrfFetch } from "./csrf";
+const GET_REVIEWS = "review/index";
 const POST_REVIEW = "review/create";
 const EDIT_REVIEW = "review/update";
+
+const getReview = (reviews) => ({
+	type: GET_REVIEWS,
+	reviews,
+});
 
 const postReview = (review) => ({
 	type: POST_REVIEW,
@@ -11,6 +17,13 @@ const editReview = (review) => ({
 	type: EDIT_REVIEW,
 	review,
 });
+
+// thunks make request to the api to GET reviews
+export const fetchReviews = (business_id) => async (dispatch) => {
+	const res = await csrfFetch(`/${business_id}/reviews`);
+	const reviews = await res.json();
+	dispatch(getReview(reviews)); // pass in reviews retrieved from database
+};
 
 // thunks make requests to the api with the info
 export const createReview =
@@ -51,6 +64,13 @@ const initialState = {};
 
 const reviewReducer = (state = initialState, action) => {
 	switch (action.type) {
+		case GET_REVIEWS:
+			return {
+				...state,
+				...Object.fromEntries(
+					action.reviews.map((review) => [review.id, review])
+				),
+			};
 		case POST_REVIEW:
 			return {
 				...state,

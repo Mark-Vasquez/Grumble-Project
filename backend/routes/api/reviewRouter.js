@@ -48,6 +48,22 @@ router.post(
 	})
 );
 
+// GET reviews by businessId
+//router.get /
+//reviews where business id matches id that is passed in
+router.get(
+	"/:business_id/reviews",
+	requireAuth,
+	validateReview,
+	asyncHandler(async (req, res, next) => {
+		const business_id = req.params.business_id;
+		const reviews = await Review.findAll({
+			where: { businessId: business_id }, // not sure
+		});
+		return res.json(reviews);
+	})
+);
+
 router.put(
 	"/:business_id/:user_id/reviews/edit",
 	requireAuth,
@@ -55,6 +71,7 @@ router.put(
 	asyncHandler(async (req, res, next) => {
 		const userId = req.params.user_id;
 		const businessId = req.params.business_id;
+		const review = await Review.findByPk(id);
 	})
 );
 

@@ -7,7 +7,7 @@ import * as sessionActions from "./store/session";
 // import Navigation from "./components/Navigation";
 import Businesses from "./components/Businesses";
 import BusinessPage from "./components/BusinessPage";
-import Review from "./components/ReviewForm";
+import ReviewForm from "./components/ReviewForm";
 import HomePage from "./components/HomePage";
 import EditReview from "./components/EditReview";
 import ReviewsDisplay from "./components/ReviewsDisplay";
@@ -32,11 +32,11 @@ function App() {
 					<Route path="/signup">
 						<SignupFormPage />
 					</Route>
-					<Route path="/businesses/:business_id/reviews">
+					<Route exact path="/businesses/:business_id/reviews">
 						<ReviewsDisplay />
 					</Route>
 					<Route path="/businesses/:business_id/reviews/new">
-						<Review />
+						<ReviewForm />
 					</Route>
 					<Route path="/review/edit/:id">
 						<EditReview />

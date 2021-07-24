@@ -8,6 +8,7 @@ import { fetchBusinessPage } from "../../store/business";
 import { fetchReviews } from "../../store/review";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
+import BusinessPageAlbum from "../BusinessPageAlbum";
 
 const BusinessPage = () => {
 	const { business_id } = useParams();
@@ -36,12 +37,7 @@ const BusinessPage = () => {
 					</Link>
 				</div>
 			</div>
-			<div className={styles.pic_container}>
-				<div className={styles.picOne}></div>
-				<div className={styles.picTwo}></div>
-				<div className={styles.picThree}></div>
-				<div className={styles.picFour}></div>
-			</div>
+			<BusinessPageAlbum />
 			<h2>{businessPage.title}</h2>
 			<p>{businessPage.description}</p>
 		</div>

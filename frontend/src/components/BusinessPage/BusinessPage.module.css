@@ -31,7 +31,7 @@
 }
 
 .picOne {
-	background-image: url("./pizza.png");
+	background-image: url("../../images/costco-hotdog.png");
 	height: 340px;
 	width: 100%;
 	background-size: cover;
@@ -39,21 +39,21 @@
 }
 
 .picTwo {
-	background-image: url("./people.png");
+	/* background-image: url("./people.png"); */
 	height: 340px;
 	width: 100%;
 	background-size: cover;
 	border-radius: 3px;
 }
 .picThree {
-	background-image: url("./hotdog.png");
+	/* background-image: url("./hotdog.png"); */
 	height: 340px;
 	width: 100%;
 	background-size: cover;
 	border-radius: 3px;
 }
 .picFour {
-	background-image: url("./icecream.png");
+	/* background-image: url("./icecream.png"); */
 	height: 340px;
 	width: 100%;
 	background-size: cover;

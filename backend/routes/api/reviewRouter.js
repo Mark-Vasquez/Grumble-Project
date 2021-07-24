@@ -8,7 +8,7 @@ const { handleValidationErrors } = require("../../utils/validation");
 const router = express.Router();
 
 // Import database
-const { Review } = require("../../db/models");
+const { Review, User, Business } = require("../../db/models");
 
 const validateReview = [
 	check("rating")
@@ -28,9 +28,7 @@ const validateReview = [
 	handleValidationErrors,
 ];
 
-// POST /businesses/:business_id/reviews - (Backend)
-
-// comment back in app.use(csurf) in app.js
+// POST review
 router.post(
 	"/:business_id/:user_id/reviews/new",
 	requireAuth,
@@ -48,24 +46,22 @@ router.post(
 	})
 );
 
-// GET reviews by businessId
-//router.get /
-//reviews where business id matches id that is passed in
+// GET reviews
 router.get(
 	"/:business_id/reviews",
-	// requireAuth,
-	// validateReview,
 	asyncHandler(async (req, res, next) => {
 		const business_id = req.params.business_id;
 		const reviews = await Review.findAll({
-			where: { businessId: business_id }, // not sure
+			where: { businessId: business_id },
+			include: [User, Business],
 		});
 		return res.json(reviews);
 	})
 );
 
+// PUT reviews
 router.put(
-	"/:business_id/:user_id/reviews/edit",
+	"/:review_id/reviews",
 	requireAuth,
 	validateReview,
 	asyncHandler(async (req, res, next) => {
@@ -74,5 +70,8 @@ router.put(
 		const review = await Review.findByPk(id);
 	})
 );
+
+// DELETE reviews
+// router.delete();
 
 module.exports = router;

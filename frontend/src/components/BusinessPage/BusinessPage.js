@@ -1,16 +1,17 @@
 // Component for single page
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import styles from "./BusinessPage.module.css";
-
 import { fetchBusinessPage } from "../../store/business";
 import { fetchReviews } from "../../store/review";
+import { deleteReview } from "../../store/review";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
 import BusinessPageAlbum from "../BusinessPageAlbum";
 
 const BusinessPage = () => {
+	const history = useHistory();
 	const { business_id } = useParams();
 	const dispatch = useDispatch();
 	const businessPage = useSelector((state) => state.businesses);
@@ -25,8 +26,6 @@ const BusinessPage = () => {
 		dispatch(fetchBusinessPage(business_id));
 		dispatch(fetchReviews(business_id));
 	}, [dispatch, business_id]);
-
-	// const findUserReview = () =>
 
 	return (
 		<div>
@@ -93,7 +92,17 @@ const BusinessPage = () => {
 										>
 											Edit
 										</Link>
-										<Link className={styles.user_delete}>Delete</Link>
+										<Link
+											className={styles.user_delete}
+											onClick={async () => {
+												console.log("look her");
+												console.log("yououuou", review.id);
+												await dispatch(deleteReview(review?.id));
+												history.push(`/businesses/${business_id}`);
+											}}
+										>
+											Delete
+										</Link>
 									</div>
 								</div>
 							);

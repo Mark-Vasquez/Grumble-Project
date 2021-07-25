@@ -92,6 +92,15 @@ router.put(
 );
 
 // DELETE reviews
-// router.delete();
+router.delete(
+	"/review/:review_id",
+	asyncHandler(async (req, res, next) => {
+		const review_id = req.params.review_id;
+		const review = await Review.findByPk(review_id);
+		await review.destroy();
+		console.log("THIS THE RESSS ", res);
+		return res.json(review);
+	})
+);
 
 module.exports = router;

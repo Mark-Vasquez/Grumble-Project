@@ -2,6 +2,7 @@ import { csrfFetch } from "./csrf";
 const GET_REVIEWS = "review/index";
 const POST_REVIEW = "review/create";
 const EDIT_REVIEW = "review/update";
+const REMOVE_REVIEW = "review/delete";
 
 const getReview = (reviews) => ({
 	type: GET_REVIEWS,
@@ -17,6 +18,26 @@ const editReview = (review) => ({
 	type: EDIT_REVIEW,
 	review,
 });
+
+const removeReview = (id) => ({
+	type: REMOVE_REVIEW,
+	id,
+});
+
+// thunk to make request to api to delete review with pk
+export const deleteReview = (review_id) => async (dispatch) => {
+	console.log("before fetch");
+	const res = await csrfFetch(`/api/business/review/${review_id}`, {
+		method: "DELETE",
+		headers: { "Content-Type": "application/json" },
+	});
+	if (!res.ok) {
+		console.log("after fetch!!!!!");
+		const reviewId = await res.json();
+		dispatch(removeReview(review_id));
+		return reviewId;
+	}
+};
 
 // thunks make request to the api to GET reviews
 export const fetchReviews = (business_id) => async (dispatch) => {
@@ -55,10 +76,10 @@ export const updateReview =
 				body: JSON.stringify({ ...form }),
 			}
 		);
-		console.log("AFTER FETCH");
 		const editedReview = await res.json();
 
 		if (res.ok) {
+			console.log("AFTER FETCH");
 			dispatch(editReview(editedReview));
 		}
 		return editedReview;
@@ -67,11 +88,9 @@ export const updateReview =
 const initialState = {};
 
 const reviewReducer = (state = initialState, action) => {
+	const newState = { ...state };
 	switch (action.type) {
 		case GET_REVIEWS:
-			let newState = {
-				...state,
-			};
 			// console.log("newstate!!", newState);
 			action.reviews.forEach((review) => {
 				newState[review.id] = review;
@@ -88,6 +107,9 @@ const reviewReducer = (state = initialState, action) => {
 				...state,
 				...action.review,
 			};
+		case REMOVE_REVIEW:
+			delete newState[action.id];
+			return newState;
 		default:
 			return state;
 	}

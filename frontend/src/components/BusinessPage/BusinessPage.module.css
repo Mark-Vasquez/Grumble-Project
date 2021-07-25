@@ -170,7 +170,8 @@
 
 .user_middle {
 	position: relative;
-	right: 125px;
+	right: 81px;
+	width: 270px;
 }
 
 .right_review {
@@ -178,8 +179,44 @@
 	right: 274px;
 }
 
+.user_right {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .user_edit {
+	position: relative;
+	display: flex;
+	text-decoration: none;
+	border: 3px solid black;
+	width: 100px;
+	height: 75px;
+	justify-content: center;
+	padding-top: 23px;
+	bottom: 15px;
+	margin-bottom: 15px;
+	color: black;
+}
+
+.user_edit:hover {
+	border: 3px solid rgb(155, 155, 155);
 }
 
 .user_delete {
+	position: relative;
+	display: flex;
+	text-decoration: none;
+	border: 3px solid black;
+	width: 100px;
+	height: 75px;
+	justify-content: center;
+	padding-top: 23px;
+	bottom: 15px;
+	margin-top: 15px;
+	color: black;
+}
+
+.user_delete:hover {
+	border: 3px solid rgb(155, 155, 155);
 }

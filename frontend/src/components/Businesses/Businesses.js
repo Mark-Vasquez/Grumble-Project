@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
-import { useHistory } from "react-router-dom";
 
 //import thunk creator from store
 import { fetchBusinesses } from "../../store/business";

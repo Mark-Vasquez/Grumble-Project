@@ -24,10 +24,11 @@ export const fetchReviews = (business_id) => async (dispatch) => {
 	const reviews = await res.json();
 	dispatch(getReview(reviews)); // pass in reviews retrieved from database
 };
-
+//`/api/business/${business_id}/${user_id}/reviews/new`
 // thunks make requests to the api with the info
 export const createReview =
 	(business_id, user_id, form) => async (dispatch) => {
+		console.log(" BEFORE FETCH");
 		const res = await csrfFetch(
 			`/api/business/${business_id}/${user_id}/reviews/new`,
 			{
@@ -36,10 +37,14 @@ export const createReview =
 				body: JSON.stringify({ ...form }),
 			}
 		);
+		console.log("okokokk");
 		const newReview = await res.json(); // object data from form
+		console.log("okokokk");
 		if (res.ok) {
 			dispatch(postReview(newReview));
+			console.log("afterrokokokk");
 		}
+		return newReview;
 	};
 
 // thunks make request to api with updated info

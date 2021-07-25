@@ -9,14 +9,13 @@ import { fetchReviews } from "../../store/review";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
 import BusinessPageAlbum from "../BusinessPageAlbum";
-import ReviewsDisplay from "../ReviewsDisplay";
 
 const BusinessPage = () => {
 	const { business_id } = useParams();
 	const dispatch = useDispatch();
 	const businessPage = useSelector((state) => state.businesses);
 	const reviews = useSelector((state) => Object.values(state.review));
-	const user_id = useSelector((state) => state?.session?.user?.id);
+	const user_id = useSelector((state) => state.session.user.id);
 
 	console.log("bizzz", businessPage);
 	console.log("reviwwzzz", reviews);
@@ -43,25 +42,26 @@ const BusinessPage = () => {
 					</Link>
 				</div>
 			</div>
-			<BusinessPageAlbum pics={businessPage.imgURL} />
+			<BusinessPageAlbum pics={businessPage?.imgURL} />
 			<div className={styles.under_pics_container}>
 				<div className={styles.left_container}>
 					<div className={styles.title_div}>
-						<h2 className={styles.title}>{businessPage.title}</h2>
+						<h2 className={styles.title}>{businessPage?.title}</h2>
 						<br />
 						<p className={styles.address}>
-							{businessPage.address}, {businessPage.city}, {businessPage.state}
+							{businessPage?.address}, {businessPage?.city},{" "}
+							{businessPage?.state}
 						</p>
-						<p className={styles.zip}>{businessPage.zipCode}</p>
+						<p className={styles.zip}>{businessPage?.zipCode}</p>
 					</div>
 					<div className={styles.description_div}>
 						<p className={styles.about}>About the Business</p>
 						<br />
-						<p className={styles.description}>{businessPage.description}</p>
+						<p className={styles.description}>{businessPage?.description}</p>
 					</div>
 					<div className={styles.reviewbtn_div}>
 						<Link
-							to={`/businesses/${businessPage.id}/reviews/new`}
+							to={`/businesses/${businessPage?.id}/reviews/new`}
 							className={styles.reviewbtn}
 						>
 							Write a review!
@@ -71,7 +71,6 @@ const BusinessPage = () => {
 						<p className={styles.review_container}>Reviews</p>
 					</div>
 					{reviews.map((review) => {
-						// eslint-disable-next-line no-lone-blocks
 						if (user_id === review.userId) {
 							return (
 								<div key={review.id} className={styles.reviewDiv}>
@@ -79,22 +78,29 @@ const BusinessPage = () => {
 										<div className={styles.username}>
 											{review?.User?.username}
 										</div>
-										<div>{review.rating} ⭐️ Review</div>
+										<div>{review?.rating} ⭐️ Review</div>
 									</div>
 									<div className={styles.user_middle}>
-										<div className={styles.review_answer}>{review.answer}</div>
+										<div className={styles.review_answer}>{review?.answer}</div>
 									</div>
 									<div className={styles.user_right}>
-										<div className={styles.user_edit}>d</div>
-										<div className={styles.user_delete}>d</div>
+										<Link
+											to={`/review/edit/${business_id}`}
+											className={styles.user_edit}
+										>
+											Edit
+										</Link>
+										<Link className={styles.user_delete}>Delete</Link>
 									</div>
 								</div>
 							);
+						} else {
+							return;
 						}
 					})}
 					{reviews.map((review) => {
 						// eslint-disable-next-line no-lone-blocks
-						if (user_id !== review.userId) {
+						if (user_id !== review.userId && review.userId !== undefined) {
 							return (
 								<div key={review.id} className={styles.reviewDiv}>
 									<div className={styles.left_review}>
@@ -102,25 +108,17 @@ const BusinessPage = () => {
 											{review?.User?.username}
 										</div>
 										<div>{review.rating} ⭐️ Review</div>
+										<div>{console.log("toops", review.userId)}</div>
 									</div>
 									<div className={styles.right_review}>
 										<div className={styles.review_answer}>{review.answer}</div>
 									</div>
 								</div>
 							);
+						} else {
+							return;
 						}
 					})}
-					{/* {reviews.map((review) => (
-						<div key={review.id} className={styles.reviewDiv}>
-							<div className={styles.left_review}>
-								<div className={styles.username}>{review?.User?.username}</div>
-								<div>{review.rating} ⭐️ Review</div>
-							</div>
-							<div className={styles.right_review}>
-								<div className={styles.review_answer}>{review.answer}</div>
-							</div>
-						</div>
-					))} */}
 				</div>
 				<div className={styles.right_container}></div>
 			</div>

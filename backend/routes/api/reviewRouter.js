@@ -37,12 +37,15 @@ router.post(
 		const userId = req.params.user_id;
 		const businessId = req.params.business_id;
 		const { rating, answer } = req.body;
+		console.log("rating", rating);
+		console.log("answer", answer);
 		const review = await Review.create({
 			userId,
 			businessId,
 			rating,
 			answer,
 		});
+		return res.json(review);
 	})
 );
 

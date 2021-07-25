@@ -8,13 +8,13 @@ import { createReview } from "../../store/review";
 
 const Ratings = [1, 2, 3, 4, 5];
 
-const ReviewForm = () => {
+const Review = () => {
 	const history = useHistory();
 	const { business_id } = useParams();
-	const user_Id = useSelector((state) => state?.session?.user?.id);
+	const user_Id = useSelector((state) => state.session.user.id);
 	const dispatch = useDispatch();
 
-	const [rating, setRating] = useState(Ratings[""]);
+	const [rating, setRating] = useState(Ratings[1]);
 	const [answer, setAnswer] = useState("");
 	const [errors, setErrors] = useState([]);
 
@@ -25,9 +25,10 @@ const ReviewForm = () => {
 		setErrors(validationErrors);
 	}, [answer, business_id, user_Id]);
 
-	const onSubmit = (e) => {
+	const onSubmit = async (e) => {
 		e.preventDefault();
-		dispatch(createReview(business_id, user_Id, { rating, answer }));
+		console.log("BEFOE DISPATCH");
+		await dispatch(createReview(business_id, user_Id, { rating, answer }));
 		history.push(`/businesses/${business_id}`);
 	};
 
@@ -65,4 +66,4 @@ const ReviewForm = () => {
 	);
 };
 
-export default ReviewForm;
+export default Review;

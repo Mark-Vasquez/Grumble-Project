@@ -31,11 +31,11 @@ export const deleteReview = (review_id) => async (dispatch) => {
 		method: "DELETE",
 		headers: { "Content-Type": "application/json" },
 	});
-	if (!res.ok) {
+	if (res.ok) {
 		console.log("after fetch!!!!!");
-		const reviewId = await res.json();
+		// const reviewId = await res.json();
 		dispatch(removeReview(review_id));
-		return reviewId;
+		return res;
 	}
 };
 

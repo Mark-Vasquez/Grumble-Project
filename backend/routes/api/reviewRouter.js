@@ -98,7 +98,7 @@ router.delete(
 		const review_id = req.params.review_id;
 		const review = await Review.findByPk(review_id);
 		await review.destroy();
-		console.log("THIS THE RESSS ", res);
+		console.log("JASON CALDITIOOO ", res.json());
 		return res.json(review);
 	})
 );

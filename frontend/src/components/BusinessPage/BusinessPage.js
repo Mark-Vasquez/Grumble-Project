@@ -16,7 +16,7 @@ const BusinessPage = () => {
 	const dispatch = useDispatch();
 	const businessPage = useSelector((state) => state.businesses);
 	const reviews = useSelector((state) => Object.values(state.review));
-	const user_id = useSelector((state) => state.session.user.id);
+	const user_id = useSelector((state) => state?.session?.user?.id);
 
 	console.log("bizzzSelectorId", businessPage);
 	console.log("bizzzParamzz", +business_id);

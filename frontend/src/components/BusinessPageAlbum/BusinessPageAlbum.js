@@ -1,6 +1,6 @@
 import styles from "./BusinessPageAlbum.module.css";
 
-const BusinessPageAlbum = () => {
+const BusinessPageAlbum = ({ pics }) => {
 	return (
 		<div>
 			<div className={styles.pic_container}>

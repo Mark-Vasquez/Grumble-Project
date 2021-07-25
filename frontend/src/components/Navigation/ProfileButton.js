@@ -35,11 +35,13 @@ function ProfileButton({ user }) {
 				<i className="fad fa-pizza-slice"></i>
 			</button>
 			{showMenu && (
-				<ul className="profile-dropdown">
-					<li>{user.username}</li>
-					<li>{user.email}</li>
+				<ul className={styles.profile_dropdown}>
+					<li className={styles.userFont}>{user.username}</li>
+					<li className={styles.userFont}>{user.email}</li>
 					<li>
-						<button onClick={logout}>Log Out</button>
+						<button className={styles.logout_button} onClick={logout}>
+							Log Out
+						</button>
 					</li>
 				</ul>
 			)}

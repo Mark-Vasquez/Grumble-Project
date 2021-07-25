@@ -105,6 +105,12 @@ module.exports = {
 					city: "Irvine",
 					state: "CA",
 					zipCode: "92618",
+					imgURL: [
+						"../../images/costco-hotdog.png",
+						"../../images/costco-icecream.png",
+						"../../images/costco-people.png",
+						"../../images/costco-pizza.png",
+					],
 					lat: "33.65960487046856",
 					lng: "-117.7438139152754",
 				},

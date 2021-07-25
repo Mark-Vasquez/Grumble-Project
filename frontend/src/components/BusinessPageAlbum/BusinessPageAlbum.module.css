@@ -1,0 +1,37 @@
+.pic_container {
+	display: flex;
+	height: 340px;
+	width: 100%;
+}
+
+.picOne {
+	background-image: url("../../images/costco-hotdog.png");
+	height: 340px;
+	width: 100%;
+	background-size: cover;
+	border-radius: 3px;
+}
+
+.picTwo {
+	background-image: url("../../images/costco-icecream.png");
+	height: 340px;
+	width: 100%;
+	background-size: cover;
+	border-radius: 3px;
+}
+
+.picThree {
+	background-image: url("../../images/costco-people.png");
+	height: 340px;
+	width: 100%;
+	background-size: cover;
+	border-radius: 3px;
+}
+
+.picFour {
+	background-image: url("../../images/costco-pizza.png");
+	height: 340px;
+	width: 100%;
+	background-size: cover;
+	border-radius: 3px;
+}

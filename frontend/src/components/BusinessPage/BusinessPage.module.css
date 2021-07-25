@@ -6,6 +6,7 @@
 	margin: 0 auto;
 	min-width: 530px;
 	background-color: rgb(213, 64, 64);
+	border-bottom: whitesmoke;
 }
 
 .logo {
@@ -22,40 +23,4 @@
 	width: 200px;
 	height: 40px;
 	border-radius: 5px;
-}
-
-.pic_container {
-	display: flex;
-	height: 340px;
-	width: 100%;
-}
-
-.picOne {
-	background-image: url("../../images/costco-hotdog.png");
-	height: 340px;
-	width: 100%;
-	background-size: cover;
-	border-radius: 3px;
-}
-
-.picTwo {
-	/* background-image: url("./people.png"); */
-	height: 340px;
-	width: 100%;
-	background-size: cover;
-	border-radius: 3px;
-}
-.picThree {
-	/* background-image: url("./hotdog.png"); */
-	height: 340px;
-	width: 100%;
-	background-size: cover;
-	border-radius: 3px;
-}
-.picFour {
-	/* background-image: url("./icecream.png"); */
-	height: 340px;
-	width: 100%;
-	background-size: cover;
-	border-radius: 3px;
 }

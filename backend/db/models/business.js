@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
 			city: DataTypes.STRING,
 			state: DataTypes.STRING,
 			zipCode: DataTypes.STRING,
+			imgURL: DataTypes.ARRAY(DataTypes.STRING),
 			lat: DataTypes.DECIMAL,
 			lng: DataTypes.DECIMAL,
 		},

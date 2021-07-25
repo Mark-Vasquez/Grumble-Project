@@ -1,3 +1,10 @@
+.page_container {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
 .banner {
 	display: flex;
 	background-image: url("./homeSplash.jpg");
@@ -7,8 +14,10 @@
 	width: 100%;
 	height: 575px;
 	margin: 0;
-	z-index: -1;
+	position: relative;
+	/* z-index: -1; */
 	/* margin-bottom: 200px; */
+	border-bottom: 1px solid whitesmoke;
 }
 
 .inner_middle_banner {
@@ -16,6 +25,8 @@
 	flex-direction: column;
 	align-items: center;
 	margin: 100px;
+	justify-content: space-around;
+	position: relative;
 }
 
 .logo_div {
@@ -26,23 +37,40 @@
 	border-radius: 5px;
 }
 
-.footer_div {
-	background-image: url("../../images/skyline.png");
-	width: 100%;
-	height: 300px;
-	background-color: rgb(184, 177, 177);
-	/* margin-top: 200px; */
-	background-size: cover;
-}
-
 .mid_page {
 	width: 100%;
 	padding-top: 100px;
+	font-family: "Paytone One", sans-serif;
+	font-size: 100px;
+}
+.footer_div {
+	/* background-image: url("../../images/skyline.png"); */
+	width: 100%;
+	height: 300px;
+	border-top: 1px solid whitesmoke;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	background-color: rgb(222, 218, 218);
+	/* background-size: cover;
+  background-repeat: no-repeat; */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-/* .footer_image {
+.footer_image {
+	position: relative;
 	background-image: url("../../images/skyline.png");
-	height: 800px;
-	width: 100%;
 	background-size: cover;
-} */
+	height: 400px;
+	width: 560px;
+	margin: 0 auto;
+}
+
+.motto {
+	font-family: "Paytone One", sans-serif;
+	color: rgb(247, 245, 184);
+	font-size: 55px;
+	font-weight: 900;
+}

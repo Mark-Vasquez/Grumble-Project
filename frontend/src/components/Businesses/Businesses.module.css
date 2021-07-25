@@ -1,0 +1,106 @@
+* {
+	font-family: Helvetica;
+	font-size: 16px;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	height: 75px;
+	align-items: center;
+	margin: 0 auto;
+	min-width: 530px;
+	background-color: rgb(213, 64, 64);
+}
+
+.logo {
+	background-image: url("../../images/Grumble-Logo.png");
+	width: 60px;
+	height: 60px;
+	background-size: cover;
+	border-radius: 5px;
+	margin-right: 30px;
+}
+
+.mid_nav {
+	background-color: whitesmoke;
+	width: 600px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.page_container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	min-height: 100vh;
+	margin: 70px;
+}
+
+.mapDiv {
+	background-image: url("../../images/map.png");
+	width: 1400px;
+	height: 1400px;
+	margin-left: 50px;
+	background-repeat: no-repeat;
+	background-size: contain;
+	border-radius: 4px;
+}
+
+.restaurant_container {
+	display: flex;
+	flex: row;
+	justify-content: space-between;
+	background-color: rgb(227, 226, 226);
+	margin: 17px;
+	padding: 20px 80px 12px 20px;
+	border: 1px solid #e8e8e8;
+}
+
+.pic_container {
+	width: 180px;
+	height: 180px;
+}
+
+.description {
+	font-size: 13px;
+}
+
+.address {
+	font-size: 13px;
+}
+
+.info_container {
+	display: flex;
+	flex-direction: column;
+	min-width: 400px;
+	height: 180px;
+	justify-content: space-evenly;
+	margin: 10px;
+}
+
+.address_container {
+	display: flex;
+	flex-direction: column;
+	height: 180px;
+	margin: 10px;
+	/* justify-content: space-evenly; */
+}
+
+.picZero {
+	background-image: url("../../images/duckdonuts.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}
+
+.picOne {
+	background-image: url("../../images/workinprogress.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}

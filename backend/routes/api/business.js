@@ -20,6 +20,7 @@ router.get(
 	"/:id",
 	asyncHandler(async (req, res, next) => {
 		const business = await Business.findByPk(req.params.id);
+		console.log(business);
 		return res.json(business);
 	})
 );

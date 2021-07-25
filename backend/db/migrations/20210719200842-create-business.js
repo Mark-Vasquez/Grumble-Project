@@ -1,4 +1,7 @@
 "use strict";
+
+const { sequelize } = require("../models");
+
 module.exports = {
 	up: (queryInterface, Sequelize) => {
 		return queryInterface.createTable("Businesses", {
@@ -31,6 +34,9 @@ module.exports = {
 			zipCode: {
 				allowNull: false,
 				type: Sequelize.STRING,
+			},
+			imgURL: {
+				type: Sequelize.ARRAY(Sequelize.STRING),
 			},
 			lat: {
 				type: Sequelize.DECIMAL,

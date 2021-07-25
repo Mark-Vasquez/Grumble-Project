@@ -22,6 +22,7 @@ const BusinessPage = () => {
 		dispatch(fetchReviews(business_id));
 	}, [dispatch, business_id]);
 	// dispatch get reviews businessId
+	console.log("DUCK MY RUSS", businessPage);
 
 	return (
 		<div>
@@ -37,7 +38,7 @@ const BusinessPage = () => {
 					</Link>
 				</div>
 			</div>
-			<BusinessPageAlbum />
+			<BusinessPageAlbum pics={businessPage.imgURL} />
 			<h2>{businessPage.title}</h2>
 			<p>{businessPage.description}</p>
 		</div>

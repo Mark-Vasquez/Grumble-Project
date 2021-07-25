@@ -1,3 +1,7 @@
+* {
+	font-family: "Rubik", sans-serif;
+}
+
 .navbar {
 	display: flex;
 	justify-content: space-between;
@@ -23,4 +27,8 @@
 	width: 200px;
 	height: 40px;
 	border-radius: 5px;
+}
+
+.under_pics_container {
+	display: flex;
 }

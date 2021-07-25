@@ -104,3 +104,68 @@
 	border-radius: 3px;
 	background-size: cover;
 }
+
+.picTwo {
+	background-image: url("../../images/maddies.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}
+.picThree {
+	background-image: url("../../images/showhotpot.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}
+.picFour {
+	background-image: url("../../images/huwei.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}
+.picFive {
+	background-image: url("../../images/tortillajoes.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}
+.picSix {
+	background-image: url("../../images/pacificbakery.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}
+.picSeven {
+	background-image: url("../../images/lajoya.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}
+.picEight {
+	background-image: url("../../images/gyutanramen.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}
+.picNine {
+	background-image: url("../../images/costco.png");
+	height: 160px;
+	width: 160px;
+	margin: 10px;
+	border-radius: 3px;
+	background-size: cover;
+}

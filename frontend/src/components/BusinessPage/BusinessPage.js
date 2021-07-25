@@ -14,15 +14,16 @@ const BusinessPage = () => {
 	const { business_id } = useParams();
 	const dispatch = useDispatch();
 	const businessPage = useSelector((state) => state.businesses);
+	const reviews = useSelector((state) => state.review);
 
-	console.log(businessPage);
+	console.log("bizzz", businessPage);
+	console.log("reviwwzzz", reviews);
 
 	useEffect(() => {
 		dispatch(fetchBusinessPage(business_id));
 		dispatch(fetchReviews(business_id));
 	}, [dispatch, business_id]);
 	// dispatch get reviews businessId
-	console.log("DUCK MY RUSS", businessPage);
 
 	return (
 		<div>
@@ -39,8 +40,13 @@ const BusinessPage = () => {
 				</div>
 			</div>
 			<BusinessPageAlbum pics={businessPage.imgURL} />
-			<h2>{businessPage.title}</h2>
-			<p>{businessPage.description}</p>
+			<div className={styles.under_pics_container}>
+				<div className={styles.left_container}>
+					<h2>{businessPage.title}</h2>
+					<p>{businessPage.description}</p>
+				</div>
+				<div className={styles.right_container}></div>
+			</div>
 		</div>
 	);
 };

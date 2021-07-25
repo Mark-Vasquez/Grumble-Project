@@ -39,9 +39,41 @@
 
 .mid_page {
 	width: 100%;
-	padding-top: 100px;
 	font-family: "Paytone One", sans-serif;
 	font-size: 100px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-bottom: 100px;
+}
+
+.flexer {
+	display: flex;
+	text-decoration: none;
+	border: 3px solid black;
+}
+
+.flexer:hover {
+	border: 3px solid rgb(155, 155, 155);
+}
+
+.restaurant_text {
+	text-decoration: none;
+	position: relative;
+	top: 23px;
+	font-size: 30px;
+	font-weight: 900;
+	color: black;
+	margin-right: 20px;
+	margin-left: 8px;
+}
+
+img {
+	padding-bottom: 40px;
+	position: relative;
+	top: 14px;
+	margin-right: 8px;
 }
 .footer_div {
 	/* background-image: url("../../images/skyline.png"); */
@@ -73,4 +105,9 @@
 	color: rgb(247, 245, 184);
 	font-size: 55px;
 	font-weight: 900;
+}
+
+p {
+	font-size: 50px;
+	text-decoration: none;
 }

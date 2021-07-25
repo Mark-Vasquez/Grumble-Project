@@ -66,9 +66,7 @@ const Businesses = () => {
 						</div>
 						<div className={styles.info_container}>
 							<div className={styles.title}>{businesses[1]?.title}</div>
-							<div className={styles.rating}>
-								{businesses[1]?.rating} ⭐️⭐️⭐️
-							</div>
+							<div className={styles.rating}>{businesses[1]?.rating} ⭐️</div>
 							<div className={styles.description}>
 								{businesses[1]?.description}
 							</div>
@@ -109,7 +107,7 @@ const Businesses = () => {
 						<div className={styles.info_container}>
 							<div className={styles.title}>{businesses[3]?.title}</div>
 							<div className={styles.rating}>
-								{businesses[3]?.rating} ⭐️⭐️⭐️
+								{businesses[3]?.rating} ⭐️⭐️⭐️⭐️
 							</div>
 							<div className={styles.description}>
 								{businesses[3]?.description}
@@ -151,7 +149,7 @@ const Businesses = () => {
 						<div className={styles.info_container}>
 							<div className={styles.title}>{businesses[5]?.title}</div>
 							<div className={styles.rating}>
-								{businesses[5]?.rating} ⭐️⭐️⭐️
+								{businesses[5]?.rating} ⭐️⭐️⭐️⭐️⭐️
 							</div>
 							<div className={styles.description}>
 								{businesses[5]?.description}
@@ -172,7 +170,7 @@ const Businesses = () => {
 						<div className={styles.info_container}>
 							<div className={styles.title}>{businesses[6]?.title}</div>
 							<div className={styles.rating}>
-								{businesses[6]?.rating} ⭐️⭐️⭐️
+								{businesses[6]?.rating} ⭐️⭐️
 							</div>
 							<div className={styles.description}>
 								{businesses[6]?.description}
@@ -214,7 +212,7 @@ const Businesses = () => {
 						<div className={styles.info_container}>
 							<div className={styles.title}>{businesses[8]?.title}</div>
 							<div className={styles.rating}>
-								{businesses[8]?.rating} ⭐️⭐️⭐️
+								{businesses[8]?.rating} ⭐️⭐️⭐️⭐️
 							</div>
 							<div className={styles.description}>
 								{businesses[8]?.description}
@@ -235,7 +233,7 @@ const Businesses = () => {
 						<div className={styles.info_container}>
 							<div className={styles.title}>{businesses[9]?.title}</div>
 							<div className={styles.rating}>
-								{businesses[9]?.rating} ⭐️⭐️⭐️
+								{businesses[9]?.rating} ⭐️⭐️⭐️⭐️⭐️
 							</div>
 							<div className={styles.description}>
 								{businesses[9]?.description}

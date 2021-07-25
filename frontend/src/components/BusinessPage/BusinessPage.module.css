@@ -31,4 +31,121 @@
 
 .under_pics_container {
 	display: flex;
+	min-height: 100vh;
+}
+
+.description {
+	font-size: 16px;
+}
+
+.left_container {
+	margin-top: 60px;
+	margin: 30px;
+	margin-left: 200px;
+	width: 700px;
+	display: flex;
+	flex-direction: column;
+	justify-self: space-around;
+}
+
+.title_div {
+	padding: 10px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid rgb(176, 176, 176);
+	margin: 30px;
+}
+
+.title {
+	font-size: 30px;
+	font-weight: 900;
+}
+
+.address {
+	font-size: 16px;
+	font-weight: 900;
+}
+
+.zip {
+	font-size: 16px;
+	font-weight: 900;
+}
+
+.description_div {
+	position: relative;
+	bottom: 30px;
+	padding: 10px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid rgb(176, 176, 176);
+	margin: 30px;
+}
+
+.about {
+	font-size: 21px;
+	font-weight: 700;
+}
+
+.reviewbtn_div {
+	position: relative;
+	bottom: 30px;
+	padding: 10px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid rgb(176, 176, 176);
+	margin: 30px;
+}
+
+.reviewbtn {
+	position: relative;
+	display: flex;
+	text-decoration: none;
+	border: 3px solid black;
+	width: 100px;
+	height: 75px;
+	justify-content: center;
+	padding-left: 21px;
+	padding-top: 12px;
+	bottom: 15px;
+	color: black;
+}
+
+.reviewbtn:hover {
+	border: 3px solid rgb(155, 155, 155);
+}
+
+.reviewDiv {
+	position: relative;
+	bottom: 30px;
+	padding: 10px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid rgb(176, 176, 176);
+	margin: 30px;
+}
+
+.review_caption {
+	position: relative;
+	bottom: 30px;
+	padding: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid rgb(176, 176, 176);
+	margin: 30px;
+}
+.review_container {
+	font-size: 21px;
+	font-weight: 700;
+	height: 27px;
+	position: relative;
+	bottom: 26px;
+	/* left: 42px; */
+}
+
+.reviewDiv {
+	display: flex;
+	position: relative;
+	bottom: 30px;
+	padding: 10px;
+	padding-bottom: 50px;
+	border-bottom: 1px solid rgb(176, 176, 176);
+	margin: 30px;
+}
+
+.username {
 }

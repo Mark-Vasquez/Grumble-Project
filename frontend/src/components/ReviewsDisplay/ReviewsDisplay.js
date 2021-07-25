@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import styles from "./ReviewsDisplay.module.css";
 
 import { fetchReviews } from "../../store/review";
-import * as sessionActions from "../../store/session";
 
 const ReviewsDisplay = () => {
 	const { business_id } = useParams();
@@ -26,7 +25,7 @@ const ReviewsDisplay = () => {
 			{reviews.map((review) => (
 				<div key={review.id}>
 					<div className={styles.name_div}>
-						<div className={styles.name}>{review.User.username}</div>
+						<div className={styles.name}>{review?.User?.username}</div>
 						<div className={styles.rating}>{review.rating}</div>
 					</div>
 					<div className={styles.review_div}>{review.answer}</div>

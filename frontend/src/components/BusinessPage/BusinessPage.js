@@ -9,12 +9,13 @@ import { fetchReviews } from "../../store/review";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
 import BusinessPageAlbum from "../BusinessPageAlbum";
+import ReviewsDisplay from "../ReviewsDisplay";
 
 const BusinessPage = () => {
 	const { business_id } = useParams();
 	const dispatch = useDispatch();
 	const businessPage = useSelector((state) => state.businesses);
-	const reviews = useSelector((state) => state.review);
+	const reviews = useSelector((state) => Object.values(state.review));
 
 	console.log("bizzz", businessPage);
 	console.log("reviwwzzz", reviews);
@@ -42,8 +43,38 @@ const BusinessPage = () => {
 			<BusinessPageAlbum pics={businessPage.imgURL} />
 			<div className={styles.under_pics_container}>
 				<div className={styles.left_container}>
-					<h2>{businessPage.title}</h2>
-					<p>{businessPage.description}</p>
+					<div className={styles.title_div}>
+						<h2 className={styles.title}>{businessPage.title}</h2>
+						<br />
+						<p className={styles.address}>
+							{businessPage.address}, {businessPage.city}, {businessPage.state}
+						</p>
+						<p className={styles.zip}>{businessPage.zipCode}</p>
+					</div>
+					<div className={styles.description_div}>
+						<p className={styles.about}>About the Business</p>
+						<br />
+						<p className={styles.description}>{businessPage.description}</p>
+					</div>
+					<div className={styles.reviewbtn_div}>
+						<Link
+							to={`/businesses/${businessPage.id}/reviews/new`}
+							className={styles.reviewbtn}
+						>
+							Write a review!
+						</Link>
+					</div>
+					<div className={styles.review_caption}>
+						<p className={styles.review_container}>Reviews</p>
+					</div>
+					{reviews.map((review) => (
+						<div key={review.id} className={styles.reviewDiv}>
+							<div className={styles.left_review}>
+								<div>{review?.User?.username}</div>
+								<div></div>
+							</div>
+						</div>
+					))}
 				</div>
 				<div className={styles.right_container}></div>
 			</div>

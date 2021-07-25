@@ -11,7 +11,7 @@ const Ratings = [1, 2, 3, 4, 5];
 const ReviewForm = () => {
 	const history = useHistory();
 	const { business_id } = useParams();
-	const user_Id = useSelector((state) => state.session.user.id);
+	const user_Id = useSelector((state) => state?.session?.user?.id);
 	const dispatch = useDispatch();
 
 	const [rating, setRating] = useState(Ratings[""]);

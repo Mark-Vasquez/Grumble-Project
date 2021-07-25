@@ -176,7 +176,8 @@
 
 .right_review {
 	position: relative;
-	right: 274px;
+	right: 81px;
+	width: 270px;
 }
 
 .user_right {
@@ -219,4 +220,32 @@
 
 .user_delete:hover {
 	border: 3px solid rgb(155, 155, 155);
+}
+
+.hidden_edit {
+	position: relative;
+	display: flex;
+	text-decoration: none;
+	/* border: 3px solid black; */
+	width: 100px;
+	height: 75px;
+	justify-content: center;
+	padding-top: 23px;
+	bottom: 15px;
+	margin-bottom: 15px;
+	/* color: black; */
+}
+
+.hidden_delete {
+	position: relative;
+	display: flex;
+	text-decoration: none;
+	/* border: 3px solid black; */
+	width: 100px;
+	height: 75px;
+	justify-content: center;
+	padding-top: 23px;
+	bottom: 15px;
+	margin-top: 15px;
+	/* color: black; */
 }

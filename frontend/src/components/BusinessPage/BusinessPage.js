@@ -107,11 +107,17 @@ const BusinessPage = () => {
 										<div className={styles.username}>
 											{review?.User?.username}
 										</div>
-										<div>{review.rating} ⭐️ Review</div>
-										<div>{console.log("toops", review.userId)}</div>
+										<div>{review?.rating} ⭐️ Review</div>
 									</div>
 									<div className={styles.right_review}>
-										<div className={styles.review_answer}>{review.answer}</div>
+										<div className={styles.review_answer}>{review?.answer}</div>
+									</div>
+									<div className={styles.user_right}>
+										<Link
+											to={`/review/edit/${business_id}`}
+											className={styles.hidden_edit}
+										></Link>
+										<Link className={styles.hidden_delete}></Link>
 									</div>
 								</div>
 							);

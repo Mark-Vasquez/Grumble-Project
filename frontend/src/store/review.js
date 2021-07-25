@@ -46,6 +46,7 @@ export const createReview =
 // thunks make request to api with updated info
 export const updateReview =
 	(business_id, review_id, form) => async (dispatch) => {
+		console.log("before fetch!!!");
 		const res = await csrfFetch(
 			`/api/business/${business_id}/${review_id}/reviews/edit`,
 			{
@@ -54,11 +55,13 @@ export const updateReview =
 				body: JSON.stringify({ ...form }),
 			}
 		);
+		console.log("AFTER FETCH");
 		const editedReview = await res.json();
 
 		if (res.ok) {
 			dispatch(editReview(editedReview));
 		}
+		return editedReview;
 	};
 
 const initialState = {};

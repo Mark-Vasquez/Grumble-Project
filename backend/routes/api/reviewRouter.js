@@ -72,11 +72,22 @@ router.put(
 		const { rating, answer } = req.body;
 		const review = await Review.findByPk(reviewId);
 		console.log(review.dataValues);
-		review.dataValues.answer = answer;
-		review.dataValues.rating = rating;
-		await review.save();
-		console.log(review.dataValues);
-		return review;
+		await review.update(
+			{ rating, answer },
+			{
+				where: { reviewId: review.id },
+				returning: true,
+				plain: true,
+			}
+		);
+		return res.json(review);
+
+		// review.dataValues.answer = answer;
+		// review.dataValues.rating = +rating;
+		// await review.save();
+		// console.log(review.dataValues);
+		// return res.json(review);
+		// this way why use history was not redirecting! you didn't return
 	})
 );
 

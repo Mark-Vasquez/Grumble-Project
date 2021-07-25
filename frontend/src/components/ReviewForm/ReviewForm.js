@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
-
 import { createReview } from "../../store/review";
 
 const Ratings = [1, 2, 3, 4, 5];
@@ -14,7 +13,7 @@ const Review = () => {
 	const user_Id = useSelector((state) => state.session.user.id);
 	const dispatch = useDispatch();
 
-	const [rating, setRating] = useState(Ratings[1]);
+	const [rating, setRating] = useState(Ratings[0]);
 	const [answer, setAnswer] = useState("");
 	const [errors, setErrors] = useState([]);
 
@@ -29,6 +28,7 @@ const Review = () => {
 		e.preventDefault();
 		console.log("BEFOE DISPATCH");
 		await dispatch(createReview(business_id, user_Id, { rating, answer }));
+		console.log("submitneww");
 		history.push(`/businesses/${business_id}`);
 	};
 

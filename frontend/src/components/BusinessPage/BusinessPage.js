@@ -88,7 +88,7 @@ const BusinessPage = () => {
 									</div>
 									<div className={styles.user_right}>
 										<Link
-											to={`/review/edit/${business_id}`}
+											to={`/review/${review.id}/edit/${business_id}`}
 											className={styles.user_edit}
 										>
 											Edit

@@ -28,6 +28,19 @@ const validateReview = [
 	handleValidationErrors,
 ];
 
+// GET reviews
+router.get(
+	"/:business_id/reviews",
+	asyncHandler(async (req, res, next) => {
+		const business_id = req.params.business_id;
+		const reviews = await Review.findAll({
+			where: { businessId: business_id },
+			include: [User, Business],
+		});
+		return res.json(reviews);
+	})
+);
+
 // POST review
 router.post(
 	"/:business_id/:user_id/reviews/new",
@@ -48,29 +61,22 @@ router.post(
 		return res.json(review);
 	})
 );
-
-// GET reviews
-router.get(
-	"/:business_id/reviews",
-	asyncHandler(async (req, res, next) => {
-		const business_id = req.params.business_id;
-		const reviews = await Review.findAll({
-			where: { businessId: business_id },
-			include: [User, Business],
-		});
-		return res.json(reviews);
-	})
-);
-
 // PUT reviews
 router.put(
-	"/:review_id/reviews",
+	"/:business_id/:review_id/reviews/edit",
 	requireAuth,
 	validateReview,
 	asyncHandler(async (req, res, next) => {
-		const userId = req.params.user_id;
+		const reviewId = req.params.review_id;
 		const businessId = req.params.business_id;
-		const review = await Review.findByPk(id);
+		const { rating, answer } = req.body;
+		const review = await Review.findByPk(reviewId);
+		console.log(review.dataValues);
+		review.dataValues.answer = answer;
+		review.dataValues.rating = rating;
+		await review.save();
+		console.log(review.dataValues);
+		return review;
 	})
 );
 

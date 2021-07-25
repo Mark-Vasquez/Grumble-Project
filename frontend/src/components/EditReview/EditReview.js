@@ -4,6 +4,9 @@ import { useState } from "react";
 import { useParams } from "react-router";
 import { useHistory } from "react-router-dom";
 import { updateReview } from "../../store/review";
+import styles from "./EditReview.module.css";
+import Navigation from "../Navigation";
+import { Link } from "react-router-dom";
 
 const Ratings = [1, 2, 3, 4, 5];
 
@@ -38,34 +41,52 @@ const EditReview = () => {
 
 	return (
 		<div>
-			<h2>Write a Review</h2>
-			<form onSubmit={onSubmit}>
-				<ul>
-					{errors.map((error) => (
-						<li key={error}>{error}</li>
-					))}
-				</ul>
-				<label>Rating</label>
-				<select value={rating} onChange={(e) => setRating(e.target.value)}>
-					{Ratings.map((rating) => (
-						<option key={rating} value={rating}>
-							{rating}
-						</option>
-					))}
-				</select>
-				<label>Share your experience!</label>
-				<textarea
-					required
-					name="name"
-					value={answer}
-					onChange={(e) => setAnswer(e.target.value)}
-				>
-					{answer}
-				</textarea>
-				<button type="submit" disabled={errors.length > 0}>
-					Submit Review
-				</button>
-			</form>
+			<div className={styles.navbar}>
+				<div className={styles.right_nav}></div>
+				<Navigation />
+				<div className={styles.mid_nav}>
+					<div className={styles.search}></div>
+				</div>
+				<div className={styles.left_nav}>
+					<Link to="/">
+						<div className={styles.logo}></div>
+					</Link>
+				</div>
+			</div>
+			<div className={styles.under_nav_container}>
+				<h2 className={styles.wav}>Edit your Review</h2>
+				<form className={styles.form} onSubmit={onSubmit}>
+					<ul>
+						{errors.map((error) => (
+							<li key={error}>{error}</li>
+						))}
+					</ul>
+					<label className={styles.label_rating}>Rating ⭐️</label>
+					<select value={rating} onChange={(e) => setRating(e.target.value)}>
+						{Ratings.map((rating) => (
+							<option key={rating} value={rating}>
+								{rating}
+							</option>
+						))}
+					</select>
+					<label>Share your experience! ⭐️</label>
+					<textarea
+						required
+						name="name"
+						value={answer}
+						onChange={(e) => setAnswer(e.target.value)}
+					>
+						{answer}
+					</textarea>
+					<button
+						className={styles.review_btn}
+						type="submit"
+						disabled={errors.length > 0}
+					>
+						Submit Review
+					</button>
+				</form>
+			</div>
 		</div>
 	);
 };

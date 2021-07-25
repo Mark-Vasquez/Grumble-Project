@@ -55,7 +55,7 @@ const Review = () => {
 							<li key={error}>{error}</li>
 						))}
 					</ul>
-					<label className={styles.label_rating}>Rating</label>
+					<label className={styles.label_rating}>Rating ⭐️</label>
 					<select value={rating} onChange={(e) => setRating(e.target.value)}>
 						{Ratings.map((rating) => (
 							<option key={rating} value={rating}>

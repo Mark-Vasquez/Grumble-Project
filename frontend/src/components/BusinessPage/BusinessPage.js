@@ -17,9 +17,9 @@ const BusinessPage = () => {
 	const reviews = useSelector((state) => Object.values(state.review));
 	const user_id = useSelector((state) => state.session.user.id);
 
-	console.log("bizzz", businessPage);
-	console.log("reviwwzzz", reviews);
-	console.log("ooooo", user_id);
+	console.log("bizzzSelectorId", businessPage);
+	console.log("bizzzParamzz", +business_id);
+	console.log("reviezuh", reviews);
 
 	useEffect(() => {
 		dispatch(fetchBusinessPage(business_id));
@@ -71,7 +71,10 @@ const BusinessPage = () => {
 						<p className={styles.review_container}>Reviews</p>
 					</div>
 					{reviews.map((review) => {
-						if (user_id === review.userId) {
+						if (
+							user_id === review.userId &&
+							+business_id === review.businessId
+						) {
 							return (
 								<div key={review.id} className={styles.reviewDiv}>
 									<div className={styles.left_review}>
@@ -100,7 +103,11 @@ const BusinessPage = () => {
 					})}
 					{reviews.map((review) => {
 						// eslint-disable-next-line no-lone-blocks
-						if (user_id !== review.userId && review.userId !== undefined) {
+						if (
+							user_id !== review.userId &&
+							review.userId !== undefined &&
+							+business_id === review.businessId
+						) {
 							return (
 								<div key={review.id} className={styles.reviewDiv}>
 									<div className={styles.left_review}>

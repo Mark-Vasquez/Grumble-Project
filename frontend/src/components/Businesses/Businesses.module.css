@@ -23,10 +23,13 @@
 }
 
 .mid_nav {
+	position: relative;
+	left: 37px;
 	background-color: whitesmoke;
-	width: 600px;
+	width: 500px;
 	height: 40px;
 	border-radius: 5px;
+	border: 1px solid gray;
 }
 
 .page_container {

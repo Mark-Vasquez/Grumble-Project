@@ -95,8 +95,6 @@ const BusinessPage = () => {
 										<Link
 											className={styles.user_delete}
 											onClick={async () => {
-												console.log("look her");
-												console.log("yououuou", review.id);
 												await dispatch(deleteReview(review?.id));
 												history.push(`/businesses/${business_id}`);
 											}}

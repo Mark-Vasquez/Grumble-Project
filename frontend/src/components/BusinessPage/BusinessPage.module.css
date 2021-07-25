@@ -118,6 +118,8 @@
 	padding-bottom: 50px;
 	border-bottom: 1px solid rgb(176, 176, 176);
 	margin: 30px;
+	display: flex;
+	flex-direction: column;
 }
 
 .review_caption {
@@ -139,13 +141,45 @@
 
 .reviewDiv {
 	display: flex;
+	flex-direction: row;
 	position: relative;
 	bottom: 30px;
 	padding: 10px;
 	padding-bottom: 50px;
 	border-bottom: 1px solid rgb(176, 176, 176);
 	margin: 30px;
+	justify-content: space-between;
+}
+
+.left_review {
+	position: relative;
+	bottom: 45px;
+	margin-right: 40px;
 }
 
 .username {
+	margin-bottom: 5px;
+}
+
+.review_answer {
+	position: relative;
+	font-size: 15px;
+	bottom: 40px;
+	margin-left: 30px;
+}
+
+.user_middle {
+	position: relative;
+	right: 125px;
+}
+
+.right_review {
+	position: relative;
+	right: 274px;
+}
+
+.user_edit {
+}
+
+.user_delete {
 }

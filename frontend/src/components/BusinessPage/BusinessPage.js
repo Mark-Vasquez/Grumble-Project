@@ -16,15 +16,18 @@ const BusinessPage = () => {
 	const dispatch = useDispatch();
 	const businessPage = useSelector((state) => state.businesses);
 	const reviews = useSelector((state) => Object.values(state.review));
+	const user_id = useSelector((state) => state?.session?.user?.id);
 
 	console.log("bizzz", businessPage);
 	console.log("reviwwzzz", reviews);
+	console.log("ooooo", user_id);
 
 	useEffect(() => {
 		dispatch(fetchBusinessPage(business_id));
 		dispatch(fetchReviews(business_id));
 	}, [dispatch, business_id]);
-	// dispatch get reviews businessId
+
+	// const findUserReview = () =>
 
 	return (
 		<div>
@@ -67,14 +70,57 @@ const BusinessPage = () => {
 					<div className={styles.review_caption}>
 						<p className={styles.review_container}>Reviews</p>
 					</div>
-					{reviews.map((review) => (
+					{reviews.map((review) => {
+						// eslint-disable-next-line no-lone-blocks
+						if (user_id === review.userId) {
+							return (
+								<div key={review.id} className={styles.reviewDiv}>
+									<div className={styles.left_review}>
+										<div className={styles.username}>
+											{review?.User?.username}
+										</div>
+										<div>{review.rating} ⭐️ Review</div>
+									</div>
+									<div className={styles.user_middle}>
+										<div className={styles.review_answer}>{review.answer}</div>
+									</div>
+									<div className={styles.user_right}>
+										<div className={styles.user_edit}>d</div>
+										<div className={styles.user_delete}>d</div>
+									</div>
+								</div>
+							);
+						}
+					})}
+					{reviews.map((review) => {
+						// eslint-disable-next-line no-lone-blocks
+						if (user_id !== review.userId) {
+							return (
+								<div key={review.id} className={styles.reviewDiv}>
+									<div className={styles.left_review}>
+										<div className={styles.username}>
+											{review?.User?.username}
+										</div>
+										<div>{review.rating} ⭐️ Review</div>
+									</div>
+									<div className={styles.right_review}>
+										<div className={styles.review_answer}>{review.answer}</div>
+									</div>
+								</div>
+							);
+						}
+					})}
+					{/* {reviews.map((review) => (
 						<div key={review.id} className={styles.reviewDiv}>
 							<div className={styles.left_review}>
-								<div>{review?.User?.username}</div>
-								<div></div>
+								<div className={styles.username}>{review?.User?.username}</div>
+								<div>{review.rating} ⭐️ Review</div>
+							</div>
+							<div className={styles.right_review}>
+								<div className={styles.review_answer}>{review.answer}</div>
 							</div>
 						</div>
-					))}
+					))} */}
 				</div>
 				<div className={styles.right_container}></div>
 			</div>

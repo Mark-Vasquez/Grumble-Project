@@ -50,8 +50,6 @@ router.post(
 		const userId = req.params.user_id;
 		const businessId = req.params.business_id;
 		const { rating, answer } = req.body;
-		console.log("rating", rating);
-		console.log("answer", answer);
 		const review = await Review.create({
 			userId,
 			businessId,
@@ -71,7 +69,7 @@ router.put(
 		const businessId = req.params.business_id;
 		const { rating, answer } = req.body;
 		const review = await Review.findByPk(reviewId);
-		console.log(review.dataValues);
+
 		await review.update(
 			{ rating, answer },
 			{
@@ -98,7 +96,7 @@ router.delete(
 		const review_id = req.params.review_id;
 		const review = await Review.findByPk(review_id);
 		await review.destroy();
-		console.log("JASON CALDITIOOO ", res.json());
+
 		return res.json(review);
 	})
 );

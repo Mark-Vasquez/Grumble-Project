@@ -13,9 +13,6 @@ const ReviewsDisplay = () => {
 
 	// reviews into array and map through in jsx to show each review
 
-	// console.log(reviews.rating);
-	console.log("RReviews!!", reviews);
-
 	useEffect(() => {
 		dispatch(fetchReviews(business_id));
 	}, [dispatch, business_id]);

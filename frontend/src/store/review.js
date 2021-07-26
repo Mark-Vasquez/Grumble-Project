@@ -26,13 +26,11 @@ const removeReview = (id) => ({
 
 // thunk to make request to api to delete review with pk
 export const deleteReview = (review_id) => async (dispatch) => {
-	console.log("before fetch");
 	const res = await csrfFetch(`/api/business/review/${review_id}`, {
 		method: "DELETE",
 		headers: { "Content-Type": "application/json" },
 	});
 	if (res.ok) {
-		console.log("after fetch!!!!!");
 		// const reviewId = await res.json();
 		dispatch(removeReview(review_id));
 		return res;
@@ -67,7 +65,6 @@ export const createReview =
 // thunks make request to api with updated info
 export const updateReview =
 	(business_id, review_id, form) => async (dispatch) => {
-		console.log("before fetch!!!");
 		const res = await csrfFetch(
 			`/api/business/${business_id}/${review_id}/reviews/edit`,
 			{
@@ -79,7 +76,6 @@ export const updateReview =
 		const editedReview = await res.json();
 
 		if (res.ok) {
-			console.log("AFTER FETCH");
 			dispatch(editReview(editedReview));
 		}
 		return editedReview;
@@ -91,11 +87,10 @@ const reviewReducer = (state = initialState, action) => {
 	const newState = { ...state };
 	switch (action.type) {
 		case GET_REVIEWS:
-			// console.log("newstate!!", newState);
 			action.reviews.forEach((review) => {
 				newState[review.id] = review;
 			});
-			// console.log("NewState!", newState);
+
 			return newState;
 		case POST_REVIEW:
 			return {

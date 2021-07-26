@@ -18,10 +18,6 @@ const BusinessPage = () => {
 	const reviews = useSelector((state) => Object.values(state.review));
 	const user_id = useSelector((state) => state?.session?.user?.id);
 
-	console.log("bizzzSelectorId", businessPage);
-	console.log("bizzzParamzz", +business_id);
-	console.log("reviezuh", reviews);
-
 	useEffect(() => {
 		dispatch(fetchBusinessPage(business_id));
 		dispatch(fetchReviews(business_id));

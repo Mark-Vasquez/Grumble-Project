@@ -12,8 +12,6 @@ const Businesses = () => {
 	// Declare variables from hooks
 	const dispatch = useDispatch();
 	const businesses = useSelector((state) => Object.values(state.businesses)); // use key used in root reducer
-	console.log(businesses);
-	console.log("yessir", businesses[0]?.title);
 
 	// Use a react hook and cause side effect
 	useEffect(() => {

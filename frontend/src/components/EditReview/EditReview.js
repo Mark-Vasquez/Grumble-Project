@@ -18,9 +18,6 @@ const EditReview = () => {
 	const business = useSelector((state) => state.businesses);
 	// const review = useSelector((state) => state.review);
 	const dispatch = useDispatch();
-	console.log("bidnessParam", business_id);
-	console.log("bidnessSelector", business);
-	console.log("revs", review_id);
 
 	const [rating, setRating] = useState(Ratings[0]);
 	const [answer, setAnswer] = useState("");

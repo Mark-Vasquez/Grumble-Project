@@ -1,5 +1,8 @@
 # Grumble-Project
 
+
+[Link to Wiki](https://github.com/Mark-Vasquez/Grumble-Project/wiki/Grumble)
+
 ## About Grumble
 
 [Grumble](grumble-application.herokuapp.com), a Yelp clone, is a fullstack app to connect food lovers with the most hip local restaurants. 
@@ -42,4 +45,3 @@ Businesses should be added dynamically by users and implement AWS S3, so busines
 
 
 
-[Link to Wiki](https://github.com/Mark-Vasquez/Grumble-Project/wiki/Grumble)

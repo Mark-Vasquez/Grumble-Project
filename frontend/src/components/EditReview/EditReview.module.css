@@ -34,7 +34,7 @@
 
 .under_nav_container {
 	display: flex;
-	min-height: 100vh;
+	min-height: 72vh;
 	align-items: center;
 	flex-direction: column;
 	background-color: rgb(252, 252, 252);

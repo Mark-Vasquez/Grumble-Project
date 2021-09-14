@@ -1,0 +1,118 @@
+.footer_div {
+	/* background-image: url("../../images/skyline.png"); */
+	width: 100%;
+	height: 300px;
+	border-top: 1px solid whitesmoke;
+	padding-top: 40px;
+	padding-bottom: 30px;
+	background-color: rgb(222, 218, 218);
+	/* background-size: cover;
+  background-repeat: no-repeat; */
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.footer_image {
+	position: relative;
+	background-image: url("../../images/skyline.png");
+	background-size: cover;
+	height: 400px;
+	width: 560px;
+	margin: 0 auto;
+}
+
+.footer_container {
+	margin-bottom: 52px;
+	height: 99px;
+	width: 100%;
+	display: flex;
+	flex: none;
+	align-items: stretch;
+	justify-content: flex-start;
+	align-content: stretch;
+	flex-direction: column;
+	position: absolute;
+	top: 90px;
+}
+
+.about_links_container {
+	margin-top: 24px;
+	height: 100px;
+	width: 100%;
+}
+
+.about_links_inner_top {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	position: relative;
+	left: 13px;
+}
+
+.linkedin_container {
+	margin: 0 8px;
+	margin-bottom: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.linked_in_text {
+	text-decoration: none;
+	color: rgb(140, 130, 115);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+}
+
+.linked_in_logo {
+	height: 100%;
+	width: 70px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left: 7px;
+}
+
+.github_container {
+	margin: 0 8px;
+	margin-bottom: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.github_text {
+	text-decoration: none;
+	color: rgb(140, 130, 115);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+}
+
+.github_logo {
+	height: 100%;
+	width: 75px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left: 7px;
+}
+
+.name_container {
+	height: 9px;
+	margin: 12px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.name_text {
+	color: rgb(140, 130, 115);
+}

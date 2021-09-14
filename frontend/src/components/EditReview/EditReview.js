@@ -7,6 +7,7 @@ import { updateReview } from "../../store/review";
 import styles from "./EditReview.module.css";
 import Navigation from "../Navigation";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const Ratings = [1, 2, 3, 4, 5];
 
@@ -14,7 +15,7 @@ const EditReview = () => {
 	const history = useHistory();
 	const { business_id } = useParams();
 	const { review_id } = useParams();
-	const user_Id = useSelector((state) => state.session.user.id);
+	const user_Id = useSelector((state) => state.session.user?.id);
 	const business = useSelector((state) => state.businesses);
 	// const review = useSelector((state) => state.review);
 	const dispatch = useDispatch();
@@ -32,7 +33,9 @@ const EditReview = () => {
 
 	const onSubmit = async (e) => {
 		e.preventDefault();
-		await dispatch(updateReview(business_id, review_id, { rating, answer }));
+		await dispatch(
+			updateReview(business_id, review_id, { rating, answer })
+		);
 		history.push(`/businesses/${business_id}`);
 	};
 
@@ -59,7 +62,9 @@ const EditReview = () => {
 						))}
 					</ul>
 					<label className={styles.label_rating}>Rating ⭐️</label>
-					<select value={rating} onChange={(e) => setRating(e.target.value)}>
+					<select
+						value={rating}
+						onChange={(e) => setRating(e.target.value)}>
 						{Ratings.map((rating) => (
 							<option key={rating} value={rating}>
 								{rating}
@@ -71,19 +76,18 @@ const EditReview = () => {
 						required
 						name="name"
 						value={answer}
-						onChange={(e) => setAnswer(e.target.value)}
-					>
+						onChange={(e) => setAnswer(e.target.value)}>
 						{answer}
 					</textarea>
 					<button
 						className={styles.review_btn}
 						type="submit"
-						disabled={errors.length > 0}
-					>
+						disabled={errors.length > 0}>
 						Submit Review
 					</button>
 				</form>
 			</div>
+			<Footer />
 		</div>
 	);
 };

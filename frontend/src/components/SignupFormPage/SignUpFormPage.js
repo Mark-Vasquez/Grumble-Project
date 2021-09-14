@@ -5,6 +5,7 @@ import * as sessionActions from "../../store/session";
 import styles from "./SignupForm.module.css";
 import Navigation from "../Navigation";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 function SignupFormPage() {
 	const dispatch = useDispatch();
@@ -95,6 +96,7 @@ function SignupFormPage() {
 					</button>
 				</form>
 			</div>
+			<Footer />
 		</div>
 	);
 }

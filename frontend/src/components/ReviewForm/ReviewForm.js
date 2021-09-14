@@ -7,13 +7,14 @@ import { createReview } from "../../store/review";
 import styles from "./ReviewForm.module.css";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
+import Footer from "../Footer/Footer";
 
 const Ratings = [1, 2, 3, 4, 5];
 
 const Review = () => {
 	const history = useHistory();
 	const { business_id } = useParams();
-	const user_Id = useSelector((state) => state.session.user.id);
+	const user_Id = useSelector((state) => state.session.user?.id);
 	const dispatch = useDispatch();
 
 	const [rating, setRating] = useState(Ratings[0]);
@@ -56,7 +57,9 @@ const Review = () => {
 						))}
 					</ul>
 					<label className={styles.label_rating}>Rating ⭐️</label>
-					<select value={rating} onChange={(e) => setRating(e.target.value)}>
+					<select
+						value={rating}
+						onChange={(e) => setRating(e.target.value)}>
 						{Ratings.map((rating) => (
 							<option key={rating} value={rating}>
 								{rating}
@@ -68,19 +71,18 @@ const Review = () => {
 						required
 						name="name"
 						value={answer}
-						onChange={(e) => setAnswer(e.target.value)}
-					>
+						onChange={(e) => setAnswer(e.target.value)}>
 						{answer}
 					</textarea>
 					<button
 						className={styles.review_btn}
 						type="submit"
-						disabled={errors.length > 0}
-					>
+						disabled={errors.length > 0}>
 						Submit Review
 					</button>
 				</form>
 			</div>
+			<Footer />
 		</div>
 	);
 };

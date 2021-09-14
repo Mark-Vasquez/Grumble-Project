@@ -9,6 +9,7 @@ import { deleteReview } from "../../store/review";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
 import BusinessPageAlbum from "../BusinessPageAlbum";
+import Footer from "../Footer/Footer";
 
 const BusinessPage = () => {
 	const history = useHistory();
@@ -52,13 +53,14 @@ const BusinessPage = () => {
 					<div className={styles.description_div}>
 						<p className={styles.about}>About the Business</p>
 						<br />
-						<p className={styles.description}>{businessPage?.description}</p>
+						<p className={styles.description}>
+							{businessPage?.description}
+						</p>
 					</div>
 					<div className={styles.reviewbtn_div}>
 						<Link
 							to={`/businesses/${businessPage?.id}/reviews/new`}
-							className={styles.reviewbtn}
-						>
+							className={styles.reviewbtn}>
 							Write a review!
 						</Link>
 					</div>
@@ -71,7 +73,9 @@ const BusinessPage = () => {
 							+business_id === review.businessId
 						) {
 							return (
-								<div key={review.id} className={styles.reviewDiv}>
+								<div
+									key={review.id}
+									className={styles.reviewDiv}>
 									<div className={styles.left_review}>
 										<div className={styles.username}>
 											{review?.User?.username}
@@ -79,22 +83,26 @@ const BusinessPage = () => {
 										<div>{review?.rating} ⭐️ Review</div>
 									</div>
 									<div className={styles.user_middle}>
-										<div className={styles.review_answer}>{review?.answer}</div>
+										<div className={styles.review_answer}>
+											{review?.answer}
+										</div>
 									</div>
 									<div className={styles.user_right}>
 										<Link
 											to={`/review/${review.id}/edit/${business_id}`}
-											className={styles.user_edit}
-										>
+											className={styles.user_edit}>
 											Edit
 										</Link>
 										<Link
 											className={styles.user_delete}
 											onClick={async () => {
-												await dispatch(deleteReview(review?.id));
-												history.push(`/businesses/${business_id}`);
-											}}
-										>
+												await dispatch(
+													deleteReview(review?.id)
+												);
+												history.push(
+													`/businesses/${business_id}`
+												);
+											}}>
 											Delete
 										</Link>
 									</div>
@@ -112,7 +120,9 @@ const BusinessPage = () => {
 							+business_id === review.businessId
 						) {
 							return (
-								<div key={review.id} className={styles.reviewDiv}>
+								<div
+									key={review.id}
+									className={styles.reviewDiv}>
 									<div className={styles.left_review}>
 										<div className={styles.username}>
 											{review?.User?.username}
@@ -120,14 +130,20 @@ const BusinessPage = () => {
 										<div>{review?.rating} ⭐️ Review</div>
 									</div>
 									<div className={styles.right_review}>
-										<div className={styles.review_answer}>{review?.answer}</div>
+										<div className={styles.review_answer}>
+											{review?.answer}
+										</div>
 									</div>
 									<div className={styles.user_right}>
 										<Link
 											to={`/review/edit/${business_id}`}
-											className={styles.hidden_edit}
-										></Link>
-										<Link className={styles.hidden_delete}></Link>
+											className={
+												styles.hidden_edit
+											}></Link>
+										<Link
+											className={
+												styles.hidden_delete
+											}></Link>
 									</div>
 								</div>
 							);
@@ -138,6 +154,7 @@ const BusinessPage = () => {
 				</div>
 				<div className={styles.right_container}></div>
 			</div>
+			<Footer />
 		</div>
 	);
 };

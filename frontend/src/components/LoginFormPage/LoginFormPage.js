@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom";
 import styles from "./LoginForm.module.css";
 import Navigation from "../Navigation";
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 function LoginFormPage() {
 	const dispatch = useDispatch();
@@ -70,9 +71,7 @@ function LoginFormPage() {
 					</button>
 				</form>
 			</div>
-			<div className={styles.footer_div}>
-				<div className={styles.footer_image}></div>
-			</div>
+			<Footer />
 		</div>
 	);
 }

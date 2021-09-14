@@ -31,15 +31,17 @@ function ProfileButton({ user }) {
 
 	return (
 		<>
-			<button className={styles.nav_btn} onClick={openMenu}>
-				<i className="fad fa-pizza-slice"></i>
+			<button className={styles.signup_btn} onClick={openMenu}>
+				<p className={styles.home_text}>Dropdown</p>
 			</button>
 			{showMenu && (
 				<ul className={styles.profile_dropdown}>
 					<li className={styles.userFont}>{user.username}</li>
 					<li className={styles.userFont}>{user.email}</li>
 					<li>
-						<button className={styles.logout_button} onClick={logout}>
+						<button
+							className={styles.logout_button}
+							onClick={logout}>
 							Log Out
 						</button>
 					</li>

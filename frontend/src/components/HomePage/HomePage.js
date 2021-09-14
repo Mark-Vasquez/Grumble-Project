@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import Navigation from "../Navigation";
+import Footer from "../Footer/Footer";
 
 const HomePage = () => {
 	return (
@@ -19,7 +20,9 @@ const HomePage = () => {
 				</div>
 				<div className={styles.mid_page}>
 					<Link className={styles.flexer} to="/businesses">
-						<div className={styles.restaurant_text}>Restaurants</div>
+						<div className={styles.restaurant_text}>
+							Restaurants
+						</div>
 						<div>
 							<img
 								src={
@@ -31,9 +34,7 @@ const HomePage = () => {
 						</div>
 					</Link>
 				</div>
-				<div className={styles.footer_div}>
-					<div className={styles.footer_image}></div>
-				</div>
+				<Footer />
 			</div>
 		</>
 	);

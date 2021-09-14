@@ -7,6 +7,7 @@ import Navigation from "../Navigation";
 //import thunk creator from store
 import { fetchBusinesses } from "../../store/business";
 import styles from "./Businesses.module.css";
+import Footer from "../Footer/Footer";
 
 const Businesses = () => {
 	// Declare variables from hooks
@@ -41,7 +42,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[0]?.title}</div>
+							<div className={styles.title}>
+								{businesses[0]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[0]?.rating} ⭐️⭐️⭐️⭐️
 							</div>
@@ -50,9 +53,15 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[0]?.address}</div>
-							<div className={styles.address}>{businesses[0]?.city}</div>
-							<div className={styles.address}>{businesses[0]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[0]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[0]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[0]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -62,16 +71,26 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[1]?.title}</div>
-							<div className={styles.rating}>{businesses[1]?.rating} ⭐️</div>
+							<div className={styles.title}>
+								{businesses[1]?.title}
+							</div>
+							<div className={styles.rating}>
+								{businesses[1]?.rating} ⭐️
+							</div>
 							<div className={styles.description}>
 								{businesses[1]?.description}
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[1]?.address}</div>
-							<div className={styles.address}>{businesses[1]?.city}</div>
-							<div className={styles.address}>{businesses[1]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[1]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[1]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[1]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -81,7 +100,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[2]?.title}</div>
+							<div className={styles.title}>
+								{businesses[2]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[2]?.rating} ⭐️⭐️⭐️
 							</div>
@@ -90,9 +111,15 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[2]?.address}</div>
-							<div className={styles.address}>{businesses[2]?.city}</div>
-							<div className={styles.address}>{businesses[2]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[2]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[2]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[2]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -102,7 +129,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[3]?.title}</div>
+							<div className={styles.title}>
+								{businesses[3]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[3]?.rating} ⭐️⭐️⭐️⭐️
 							</div>
@@ -111,9 +140,15 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[3]?.address}</div>
-							<div className={styles.address}>{businesses[3]?.city}</div>
-							<div className={styles.address}>{businesses[3]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[3]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[3]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[3]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -123,7 +158,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[4]?.title}</div>
+							<div className={styles.title}>
+								{businesses[4]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[4]?.rating} ⭐️⭐️⭐️
 							</div>
@@ -132,9 +169,15 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[4]?.address}</div>
-							<div className={styles.address}>{businesses[4]?.city}</div>
-							<div className={styles.address}>{businesses[4]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[4]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[4]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[4]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -144,7 +187,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[5]?.title}</div>
+							<div className={styles.title}>
+								{businesses[5]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[5]?.rating} ⭐️⭐️⭐️⭐️⭐️
 							</div>
@@ -153,9 +198,15 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[5]?.address}</div>
-							<div className={styles.address}>{businesses[5]?.city}</div>
-							<div className={styles.address}>{businesses[5]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[5]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[5]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[5]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -165,7 +216,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[6]?.title}</div>
+							<div className={styles.title}>
+								{businesses[6]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[6]?.rating} ⭐️⭐️
 							</div>
@@ -174,9 +227,15 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[6]?.address}</div>
-							<div className={styles.address}>{businesses[6]?.city}</div>
-							<div className={styles.address}>{businesses[6]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[6]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[6]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[6]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -186,7 +245,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[7]?.title}</div>
+							<div className={styles.title}>
+								{businesses[7]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[7]?.rating} ⭐️⭐️⭐️
 							</div>
@@ -195,9 +256,15 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[7]?.address}</div>
-							<div className={styles.address}>{businesses[7]?.city}</div>
-							<div className={styles.address}>{businesses[7]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[7]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[7]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[7]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -207,7 +274,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[8]?.title}</div>
+							<div className={styles.title}>
+								{businesses[8]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[8]?.rating} ⭐️⭐️⭐️⭐️
 							</div>
@@ -216,9 +285,15 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[8]?.address}</div>
-							<div className={styles.address}>{businesses[8]?.city}</div>
-							<div className={styles.address}>{businesses[8]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[8]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[8]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[8]?.zipCode}
+							</div>
 						</div>
 					</div>
 					<div className={styles.restaurant_container}>
@@ -228,7 +303,9 @@ const Businesses = () => {
 							</Link>
 						</div>
 						<div className={styles.info_container}>
-							<div className={styles.title}>{businesses[9]?.title}</div>
+							<div className={styles.title}>
+								{businesses[9]?.title}
+							</div>
 							<div className={styles.rating}>
 								{businesses[9]?.rating} ⭐️⭐️⭐️⭐️⭐️
 							</div>
@@ -237,14 +314,21 @@ const Businesses = () => {
 							</div>
 						</div>
 						<div className={styles.address_container}>
-							<div className={styles.address}>{businesses[9]?.address}</div>
-							<div className={styles.address}>{businesses[9]?.city}</div>
-							<div className={styles.address}>{businesses[9]?.zipCode}</div>
+							<div className={styles.address}>
+								{businesses[9]?.address}
+							</div>
+							<div className={styles.address}>
+								{businesses[9]?.city}
+							</div>
+							<div className={styles.address}>
+								{businesses[9]?.zipCode}
+							</div>
 						</div>
 					</div>
 				</div>
 				<div className={styles.mapDiv}></div>
 			</div>
+			<Footer />
 		</div>
 	);
 };

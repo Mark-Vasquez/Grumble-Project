@@ -6,10 +6,24 @@ module.exports = {
 			"Images",
 			[
 				{
-					reviewId: 1,
+					businessId: 1,
 					imageURL:
-						"https://wdef.com/wp-content/uploads/2020/01/duck-donuts2.jpg",
-					caption: "Nice and warm",
+						"https://grumble.s3.us-west-1.amazonaws.com/duck.png",
+				},
+				{
+					businessId: 1,
+					imageURL:
+						"https://grumble.s3.us-west-1.amazonaws.com/duck2.png",
+				},
+				{
+					businessId: 1,
+					imageURL:
+						"https://grumble.s3.us-west-1.amazonaws.com/duck3.png",
+				},
+				{
+					businessId: 1,
+					imageURL:
+						"https://grumble.s3.us-west-1.amazonaws.com/duck4.png",
 				},
 			],
 			{}

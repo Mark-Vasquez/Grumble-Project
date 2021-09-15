@@ -22,6 +22,7 @@ const BusinessPage = () => {
 	useEffect(() => {
 		dispatch(fetchBusinessPage(business_id));
 		dispatch(fetchReviews(business_id));
+		window.scrollTo(0, 0);
 	}, [dispatch, business_id]);
 
 	return (

@@ -43,8 +43,9 @@
 	font-size: 100px;
 	margin: 0 auto;
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
+	align-items: center;
+	padding-top: 100px;
 	padding-bottom: 100px;
 }
 

@@ -41,13 +41,14 @@
 }
 
 .mapDiv {
-	background-image: url("../../images/map.png");
+	/* background-image: url("../../images/map.png"); */
 	width: 1400px;
 	height: 1400px;
 	margin-left: 50px;
 	background-repeat: no-repeat;
 	background-size: contain;
 	border-radius: 4px;
+	/* display: none; */
 }
 
 .restaurant_container {

@@ -30,9 +30,9 @@ const BusinessPage = () => {
 			<div className={styles.navbar}>
 				<div className={styles.right_nav}></div>
 				<Navigation />
-				<div className={styles.mid_nav}>
+				{/* <div className={styles.mid_nav}>
 					<div className={styles.search}></div>
-				</div>
+				</div> */}
 				<div className={styles.left_nav}>
 					<Link to="/">
 						<div className={styles.logo}></div>

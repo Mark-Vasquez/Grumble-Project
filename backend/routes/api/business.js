@@ -20,7 +20,7 @@ router.get(
 	"/:id",
 	asyncHandler(async (req, res, next) => {
 		const business = await Business.findByPk(req.params.id, {
-			include: Image,
+			include: [Image, Review],
 		});
 
 		return res.json(business);

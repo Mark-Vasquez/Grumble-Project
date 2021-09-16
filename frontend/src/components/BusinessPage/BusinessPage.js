@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import styles from "./BusinessPage.module.css";
 import { fetchBusinessPage } from "../../store/business";
-import { fetchReviews } from "../../store/review";
+// import { fetchReviews } from "../../store/review";
 import { deleteReview } from "../../store/review";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
@@ -16,13 +16,14 @@ const BusinessPage = () => {
 	const { business_id } = useParams();
 	const dispatch = useDispatch();
 	const businessPage = useSelector((state) => state.businesses);
-	const reviews = useSelector((state) => Object.values(state.review));
+	const reviews = useSelector((state) => state?.businesses?.Reviews);
 	const user_id = useSelector((state) => state?.session?.user?.id);
-	const images = useSelector((state) => state?.businesses?.Images);
+	const picture = useSelector((state) => state?.businesses?.Images);
 	// console.log("topOfTheMorning", images[1]);
+	console.log("AHHH", reviews);
 	useEffect(() => {
+		// dispatch(fetchReviews(business_id));
 		dispatch(fetchBusinessPage(business_id));
-		dispatch(fetchReviews(business_id));
 		window.scrollTo(0, 0);
 	}, [dispatch, business_id]);
 
@@ -40,7 +41,7 @@ const BusinessPage = () => {
 					</Link>
 				</div>
 			</div>
-			<BusinessPageAlbum pics={images} />
+			<BusinessPageAlbum pics={picture} />
 			<div className={styles.under_pics_container}>
 				<div className={styles.left_container}>
 					<div className={styles.title_div}>
@@ -69,7 +70,7 @@ const BusinessPage = () => {
 					<div className={styles.review_caption}>
 						<p className={styles.review_container}>Reviews</p>
 					</div>
-					{reviews.map((review) => {
+					{reviews?.map((review) => {
 						if (
 							user_id === review.userId &&
 							+business_id === review.businessId
@@ -114,7 +115,7 @@ const BusinessPage = () => {
 							return;
 						}
 					})}
-					{reviews.map((review) => {
+					{reviews?.map((review) => {
 						// eslint-disable-next-line no-lone-blocks
 						if (
 							user_id !== review.userId &&

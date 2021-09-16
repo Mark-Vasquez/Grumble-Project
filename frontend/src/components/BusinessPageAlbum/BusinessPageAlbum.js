@@ -4,9 +4,13 @@ const BusinessPageAlbum = ({ pics }) => {
 	return (
 		<>
 			<div className={styles.pic_container}>
-				{pics.map((pic) => {
+				{pics?.map((pic) => {
 					return (
-						<img className={styles.pic} src={pic.imageURL} alt="" />
+						<img
+							className={styles.pic}
+							src={pic.imageURL}
+							alt="pic"
+						/>
 					);
 				})}
 			</div>

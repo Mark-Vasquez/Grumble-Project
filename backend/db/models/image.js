@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
 	const Image = sequelize.define(
 		"Image",
 		{
-			reviewId: DataTypes.INTEGER,
+			businessId: DataTypes.INTEGER,
 			imageURL: DataTypes.STRING,
 			caption: DataTypes.STRING,
 		},

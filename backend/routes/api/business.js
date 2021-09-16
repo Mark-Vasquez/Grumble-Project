@@ -3,7 +3,7 @@ const router = express.Router();
 const asyncHandler = require("express-async-handler");
 
 // Import database stuff you'll need
-const { Business } = require("../../db/models");
+const { Business, Image, Review } = require("../../db/models");
 // import reviews model db here
 
 // Create API route here for all pages
@@ -19,7 +19,10 @@ router.get(
 router.get(
 	"/:id",
 	asyncHandler(async (req, res, next) => {
-		const business = await Business.findByPk(req.params.id);
+		const business = await Business.findByPk(req.params.id, {
+			include: Image,
+		});
+
 		return res.json(business);
 	})
 );

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import styles from "./BusinessPage.module.css";
 import { fetchBusinessPage } from "../../store/business";
-// import { fetchReviews } from "../../store/review";
+import { fetchReviews } from "../../store/review";
 import { deleteReview } from "../../store/review";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
@@ -16,14 +16,13 @@ const BusinessPage = () => {
 	const { business_id } = useParams();
 	const dispatch = useDispatch();
 	const businessPage = useSelector((state) => state.businesses);
-	const reviews = useSelector((state) => state?.businesses?.Reviews);
+	const reviews = useSelector((state) => Object.values(state.review));
 	const user_id = useSelector((state) => state?.session?.user?.id);
 	const picture = useSelector((state) => state?.businesses?.Images);
-	// console.log("topOfTheMorning", images[1]);
-	console.log("AHHH", reviews);
+
 	useEffect(() => {
-		// dispatch(fetchReviews(business_id));
 		dispatch(fetchBusinessPage(business_id));
+		dispatch(fetchReviews(business_id));
 		window.scrollTo(0, 0);
 	}, [dispatch, business_id]);
 

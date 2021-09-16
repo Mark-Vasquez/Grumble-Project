@@ -41,7 +41,7 @@ const businessReducer = (state = initialState, action) => {
 				),
 			};
 		case GET_BUSINESS_PAGE:
-			return { ...state, ...action.business };
+			return { ...action.business };
 		default:
 			return state;
 	}

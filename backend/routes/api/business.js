@@ -10,7 +10,9 @@ const { Business, Image, Review } = require("../../db/models");
 router.get(
 	"",
 	asyncHandler(async (req, res, next) => {
-		const businesses = await Business.findAll();
+		const businesses = await Business.findAll({
+			include: [Image, Review],
+		});
 		return res.json(businesses);
 	})
 );

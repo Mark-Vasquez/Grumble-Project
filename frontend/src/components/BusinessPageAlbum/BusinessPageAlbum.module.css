@@ -4,14 +4,14 @@
 	width: 100%;
 }
 
-.picOne {
-	background-image: url("../../images/costco-hotdog.png");
+.pic {
+	/* background-image: url("../../images/costco-hotdog.png"); */
 	height: 340px;
 	width: 100%;
-	background-size: cover;
-	border-radius: 3px;
+	object-fit: cover;
+	border-radius: 2px;
 }
-
+/* 
 .picTwo {
 	background-image: url("../../images/costco-icecream.png");
 	height: 340px;
@@ -34,4 +34,4 @@
 	width: 100%;
 	background-size: cover;
 	border-radius: 3px;
-}
+} */

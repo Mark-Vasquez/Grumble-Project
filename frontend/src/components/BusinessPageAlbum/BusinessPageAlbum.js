@@ -2,14 +2,15 @@ import styles from "./BusinessPageAlbum.module.css";
 
 const BusinessPageAlbum = ({ pics }) => {
 	return (
-		<div>
+		<>
 			<div className={styles.pic_container}>
-				<div className={styles.picOne}></div>
-				<div className={styles.picTwo}></div>
-				<div className={styles.picThree}></div>
-				<div className={styles.picFour}></div>
+				{pics.map((pic) => {
+					return (
+						<img className={styles.pic} src={pic.imageURL} alt="" />
+					);
+				})}
 			</div>
-		</div>
+		</>
 	);
 };
 

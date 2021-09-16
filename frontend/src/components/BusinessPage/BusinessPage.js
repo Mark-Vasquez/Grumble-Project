@@ -18,7 +18,8 @@ const BusinessPage = () => {
 	const businessPage = useSelector((state) => state.businesses);
 	const reviews = useSelector((state) => Object.values(state.review));
 	const user_id = useSelector((state) => state?.session?.user?.id);
-
+	const images = useSelector((state) => state?.businesses?.Images);
+	// console.log("topOfTheMorning", images[1]);
 	useEffect(() => {
 		dispatch(fetchBusinessPage(business_id));
 		dispatch(fetchReviews(business_id));
@@ -39,7 +40,7 @@ const BusinessPage = () => {
 					</Link>
 				</div>
 			</div>
-			<BusinessPageAlbum pics={businessPage?.imgURL} />
+			<BusinessPageAlbum pics={images} />
 			<div className={styles.under_pics_container}>
 				<div className={styles.left_container}>
 					<div className={styles.title_div}>

@@ -35,10 +35,10 @@ const businessReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case GET_BUSINESSES:
 			return {
-				...state,
-				...Object.fromEntries(
-					action.businesses.map((business) => [business.id, business])
-				),
+				// ...Object.fromEntries(
+				// 	action.businesses.map((business) => [business.id, business])
+				// ),
+				...action.businesses,
 			};
 		case GET_BUSINESS_PAGE:
 			return { ...action.business };

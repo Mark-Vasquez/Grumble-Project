@@ -1,5 +1,5 @@
 // import hooks from react and react-redux
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
@@ -11,14 +11,23 @@ import Footer from "../Footer/Footer";
 
 const Businesses = () => {
 	// Declare variables from hooks
+	const [rerender, setRerender] = useState("no");
 	const dispatch = useDispatch();
-	const businesses = useSelector((state) => Object.values(state?.businesses)); // use key used in root reducer
-	console.log("SHIT", businesses);
+	const businesses = useSelector((state) => {
+		if (state?.businesses?.[0]?.id === 1) {
+			console.log("YOOOOO", state.businesses);
+			return Object.values(state?.businesses);
+		} else {
+			console.log("fuck");
+		}
+	}); // use key used in root reducer
+	// console.log("SHIT", businesses);
 
 	// Use a react hook and cause side effect
 	useEffect(() => {
+		console.log("USE EFFECT RAN!!!!!!");
 		dispatch(fetchBusinesses());
-	}, []);
+	}, [dispatch]);
 
 	return (
 		<div>
@@ -36,7 +45,7 @@ const Businesses = () => {
 			</div>
 			<div className={styles.page_container}>
 				<div className={styles.left_side_container}>
-					{console.log("biznesSSSS", businesses)}
+					{console.log("cocksucker", businesses)}
 					{businesses?.map((business) => {
 						{
 							console.log("dabiz", business);
@@ -47,7 +56,7 @@ const Businesses = () => {
 									<Link to={`/businesses/${business?.id}`}>
 										<img
 											className={styles.picZero}
-											src={business?.Images[1]?.imageURL}
+											src={business.Images[0].imageURL}
 											alt="pic"
 										/>
 									</Link>

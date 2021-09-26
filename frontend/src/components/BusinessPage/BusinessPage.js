@@ -18,6 +18,7 @@ const BusinessPage = () => {
 	const businessPage = useSelector((state) => state.businesses);
 	const reviews = useSelector((state) => Object.values(state.review));
 	const user_id = useSelector((state) => state?.session?.user?.id);
+	const picture = useSelector((state) => state?.businesses?.Images);
 
 	useEffect(() => {
 		dispatch(fetchBusinessPage(business_id));
@@ -39,7 +40,7 @@ const BusinessPage = () => {
 					</Link>
 				</div>
 			</div>
-			<BusinessPageAlbum pics={businessPage?.imgURL} />
+			<BusinessPageAlbum pics={picture} />
 			<div className={styles.under_pics_container}>
 				<div className={styles.left_container}>
 					<div className={styles.title_div}>
@@ -68,7 +69,7 @@ const BusinessPage = () => {
 					<div className={styles.review_caption}>
 						<p className={styles.review_container}>Reviews</p>
 					</div>
-					{reviews.map((review) => {
+					{reviews?.map((review) => {
 						if (
 							user_id === review.userId &&
 							+business_id === review.businessId
@@ -113,7 +114,7 @@ const BusinessPage = () => {
 							return;
 						}
 					})}
-					{reviews.map((review) => {
+					{reviews?.map((review) => {
 						// eslint-disable-next-line no-lone-blocks
 						if (
 							user_id !== review.userId &&

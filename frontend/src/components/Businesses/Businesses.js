@@ -1,5 +1,5 @@
 // import hooks from react and react-redux
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Navigation from "../Navigation";
@@ -11,11 +11,21 @@ import Footer from "../Footer/Footer";
 
 const Businesses = () => {
 	// Declare variables from hooks
+	const [rerender, setRerender] = useState("no");
 	const dispatch = useDispatch();
-	const businesses = useSelector((state) => Object.values(state.businesses)); // use key used in root reducer
+	const businesses = useSelector((state) => {
+		if (state?.businesses?.[0]?.id === 1) {
+			console.log("YOOOOO", state.businesses);
+			return Object.values(state?.businesses);
+		} else {
+			console.log("fuck");
+		}
+	}); // use key used in root reducer
+	// console.log("SHIT", businesses);
 
 	// Use a react hook and cause side effect
 	useEffect(() => {
+		console.log("USE EFFECT RAN!!!!!!");
 		dispatch(fetchBusinesses());
 	}, [dispatch]);
 
@@ -35,36 +45,48 @@ const Businesses = () => {
 			</div>
 			<div className={styles.page_container}>
 				<div className={styles.left_side_container}>
-					<div className={styles.restaurant_container}>
-						<div className={styles.pic_container}>
-							<Link to={`/businesses/${businesses[0]?.id}`}>
-								<div className={styles.picZero}></div>
-							</Link>
-						</div>
-						<div className={styles.info_container}>
-							<div className={styles.title}>
-								{businesses[0]?.title}
+					{console.log("cocksucker", businesses)}
+					{businesses?.map((business) => {
+						{
+							console.log("dabiz", business);
+						}
+						return (
+							<div className={styles.restaurant_container}>
+								<div className={styles.pic_container}>
+									<Link to={`/businesses/${business?.id}`}>
+										<img
+											className={styles.picZero}
+											src={business.Images[0].imageURL}
+											alt="pic"
+										/>
+									</Link>
+								</div>
+								<div className={styles.info_container}>
+									<div className={styles.title}>
+										{business?.title}
+									</div>
+									<div className={styles.rating}>
+										{/* {businesses[0]?.rating} ⭐️⭐️⭐️⭐️ */}
+									</div>
+									<div className={styles.description}>
+										{business?.description}
+									</div>
+								</div>
+								<div className={styles.address_container}>
+									<div className={styles.address}>
+										{business?.address}
+									</div>
+									<div className={styles.address}>
+										{business?.city}
+									</div>
+									<div className={styles.address}>
+										{business?.zipCode}
+									</div>
+								</div>
 							</div>
-							<div className={styles.rating}>
-								{businesses[0]?.rating} ⭐️⭐️⭐️⭐️
-							</div>
-							<div className={styles.description}>
-								{businesses[0]?.description}
-							</div>
-						</div>
-						<div className={styles.address_container}>
-							<div className={styles.address}>
-								{businesses[0]?.address}
-							</div>
-							<div className={styles.address}>
-								{businesses[0]?.city}
-							</div>
-							<div className={styles.address}>
-								{businesses[0]?.zipCode}
-							</div>
-						</div>
-					</div>
-					<div className={styles.restaurant_container}>
+						);
+					})}
+					{/* <div className={styles.restaurant_container}>
 						<div className={styles.pic_container}>
 							<Link to={`/businesses/${businesses[1]?.id}`}>
 								<div className={styles.picOne}></div>
@@ -324,7 +346,7 @@ const Businesses = () => {
 								{businesses[9]?.zipCode}
 							</div>
 						</div>
-					</div>
+					</div> */}
 				</div>
 				<div className={styles.mapDiv}></div>
 			</div>

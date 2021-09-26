@@ -8,17 +8,16 @@ module.exports = {
 				primaryKey: true,
 				type: Sequelize.INTEGER,
 			},
-			reviewId: {
+			businessId: {
 				allowNull: false,
 				type: Sequelize.INTEGER,
-				references: { model: "Reviews" },
+				references: { model: "Businesses" },
 			},
 			imageURL: {
 				allowNull: false,
 				type: Sequelize.STRING,
 			},
 			caption: {
-				allowNull: false,
 				type: Sequelize.STRING,
 			},
 			createdAt: {

@@ -1,11 +1,15 @@
 # Grumble-Project
 
+![](https://github.com/Mark-Vasquez/Grumble-Project/blob/main/wiki_images/Screen%20Shot%202021-07-25%20at%206.41.26%20PM.png)
+![](https://github.com/Mark-Vasquez/Grumble-Project/blob/main/wiki_images/Screen%20Shot%202021-07-25%20at%206.41.37%20PM.png)
+![](https://github.com/Mark-Vasquez/Grumble-Project/blob/main/wiki_images/Screen%20Shot%202021-07-25%20at%206.41.51%20PM.png)
+
 
 [Link to Wiki](https://github.com/Mark-Vasquez/Grumble-Project/wiki/Grumble)
 
 ## About Grumble
 
-[Grumble](grumble-application.herokuapp.com), a Yelp clone, is a fullstack app to connect food lovers with the most hip local restaurants. 
+[Grumble](https://grumble-application.herokuapp.com/), a Yelp clone, is a fullstack app to connect food lovers with the most hip local restaurants. 
 
 ## Application Architechture
 

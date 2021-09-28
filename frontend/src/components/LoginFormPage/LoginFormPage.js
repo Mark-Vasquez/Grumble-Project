@@ -32,9 +32,9 @@ function LoginFormPage() {
 			<div className={styles.navbar}>
 				<div className={styles.right_nav}></div>
 				<Navigation />
-				<div className={styles.mid_nav}>
+				{/* <div className={styles.mid_nav}>
 					<div className={styles.search}></div>
-				</div>
+				</div> */}
 				<div className={styles.left_nav}>
 					<Link to="/">
 						<div className={styles.logo}></div>
@@ -42,7 +42,7 @@ function LoginFormPage() {
 				</div>
 			</div>
 			<div className={styles.under_nav_container}>
-				<form onSubmit={handleSubmit}>
+				<form className={styles.login_form} onSubmit={handleSubmit}>
 					<ul>
 						{errors.map((error, idx) => (
 							<li key={idx}>{error}</li>

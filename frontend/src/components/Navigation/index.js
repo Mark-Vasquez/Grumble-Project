@@ -10,6 +10,11 @@ function Navigation({ isLoaded }) {
 	const dispatch = useDispatch();
 	const sessionUser = useSelector((state) => state.session.user);
 
+	const log_out = (e) => {
+		e.preventDefault();
+		dispatch(logout());
+	};
+
 	const loginDemo = async () => {
 		await dispatch(
 			login({ credential: "demo@user.io", password: "password" })
@@ -18,7 +23,20 @@ function Navigation({ isLoaded }) {
 
 	let sessionLinks;
 	if (sessionUser) {
-		sessionLinks = <ProfileButton user={sessionUser} />;
+		// sessionLinks = <ProfileButton user={sessionUser} />;
+		sessionLinks = (
+			<>
+				<button className={styles.logout_button} onClick={log_out}>
+					Log Out
+				</button>
+				<div className={styles.greetings}>
+					<p className={styles.userFont}>
+						Hello, {sessionUser.username}
+					</p>
+				</div>
+				{/* <p className={styles.userFont}>{sessionUser.email}</p> */}
+			</>
+		);
 	} else {
 		sessionLinks = (
 			<>

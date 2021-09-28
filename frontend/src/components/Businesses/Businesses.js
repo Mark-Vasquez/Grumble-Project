@@ -15,17 +15,13 @@ const Businesses = () => {
 	const dispatch = useDispatch();
 	const businesses = useSelector((state) => {
 		if (state?.businesses?.[0]?.id === 1) {
-			console.log("YOOOOO", state.businesses);
 			return Object.values(state?.businesses);
 		} else {
-			console.log("fuck");
 		}
 	}); // use key used in root reducer
-	// console.log("SHIT", businesses);
 
 	// Use a react hook and cause side effect
 	useEffect(() => {
-		console.log("USE EFFECT RAN!!!!!!");
 		dispatch(fetchBusinesses());
 	}, [dispatch]);
 
@@ -45,11 +41,7 @@ const Businesses = () => {
 			</div>
 			<div className={styles.page_container}>
 				<div className={styles.left_side_container}>
-					{console.log("cocksucker", businesses)}
 					{businesses?.map((business) => {
-						{
-							console.log("dabiz", business);
-						}
 						return (
 							<div className={styles.restaurant_container}>
 								<div className={styles.pic_container}>

@@ -43,7 +43,7 @@
 
 form {
 	position: relative;
-	height: 500px;
+	min-height: 100px;
 	width: 400px;
 	display: flex;
 	flex-direction: column;

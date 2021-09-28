@@ -41,9 +41,13 @@
 	margin-top: 100px;
 }
 
-form {
+input {
+	height: 42px;
+}
+
+.login_form {
 	position: relative;
-	height: 300px;
+	height: 350px !important;
 	width: 400px;
 	display: flex;
 	flex-direction: column;

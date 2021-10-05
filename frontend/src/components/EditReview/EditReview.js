@@ -8,6 +8,7 @@ import styles from "./EditReview.module.css";
 import Navigation from "../Navigation";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
+import { fetchReviews } from "../../store/review";
 
 const Ratings = [1, 2, 3, 4, 5];
 
@@ -16,15 +17,17 @@ const EditReview = () => {
 	const { business_id } = useParams();
 	const { review_id } = useParams();
 	const user_Id = useSelector((state) => state.session.user?.id);
-	const business = useSelector((state) => state.businesses);
-	// const review = useSelector((state) => state.review);
+	// const business = useSelector((state) => state.businesses);
+	const review = useSelector((state) => state.review);
 	const dispatch = useDispatch();
+	const reviewObj = review[review_id];
 
 	const [rating, setRating] = useState(Ratings[0]);
-	const [answer, setAnswer] = useState("");
+	const [answer, setAnswer] = useState(reviewObj?.answer);
 	const [errors, setErrors] = useState([]);
 
 	useEffect(() => {
+		dispatch(fetchReviews(business_id));
 		const validationErrors = [];
 		if (answer.length > 255)
 			validationErrors.push("Review must be 255 characters or less");

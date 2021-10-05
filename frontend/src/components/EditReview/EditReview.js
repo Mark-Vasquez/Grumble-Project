@@ -32,7 +32,7 @@ const EditReview = () => {
 		if (answer.length > 255)
 			validationErrors.push("Review must be 255 characters or less");
 		setErrors(validationErrors);
-	}, [answer, business_id, user_Id]);
+	}, [dispatch, answer, business_id, user_Id]);
 
 	const onSubmit = async (e) => {
 		e.preventDefault();

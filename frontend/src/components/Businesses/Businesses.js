@@ -11,7 +11,8 @@ import Footer from "../Footer/Footer";
 
 const Businesses = () => {
 	// Declare variables from hooks
-	const [rerender, setRerender] = useState("no");
+	// const [rerender, setRerender] = useState("no");
+	const [searchTerm, setSearchTerm] = useState("");
 	const dispatch = useDispatch();
 	const businesses = useSelector((state) => {
 		if (state?.businesses?.[0]?.id === 1) {
@@ -30,9 +31,16 @@ const Businesses = () => {
 			<div className={styles.navbar}>
 				<div className={styles.right_nav}></div>
 				<Navigation />
-				{/* <div className={styles.mid_nav}>
-					<div className={styles.search}></div>
-				</div> */}
+				<div className={styles.mid_nav}>
+					<input
+						className={styles.search_bar}
+						type="text"
+						placeholder="Search..."
+						onChange={(e) => {
+							setSearchTerm(e.target.value);
+						}}
+					/>
+				</div>
 				<div className={styles.left_nav}>
 					<Link to="/">
 						<div className={styles.logo}></div>
@@ -41,43 +49,58 @@ const Businesses = () => {
 			</div>
 			<div className={styles.page_container}>
 				<div className={styles.left_side_container}>
-					{businesses?.map((business) => {
-						return (
-							<div className={styles.restaurant_container}>
-								<div className={styles.pic_container}>
-									<Link to={`/businesses/${business?.id}`}>
-										<img
-											className={styles.picZero}
-											src={business.Images[0].imageURL}
-											alt="pic"
-										/>
-									</Link>
+					{businesses
+						?.filter((val) => {
+							if (searchTerm === "") {
+								return val;
+							} else if (
+								val.title
+									.toLowerCase()
+									.includes(searchTerm.toLowerCase())
+							) {
+								return val;
+							}
+						})
+						.map((business) => {
+							return (
+								<div className={styles.restaurant_container}>
+									<div className={styles.pic_container}>
+										<Link
+											to={`/businesses/${business?.id}`}>
+											<img
+												className={styles.picZero}
+												src={
+													business.Images[0].imageURL
+												}
+												alt="pic"
+											/>
+										</Link>
+									</div>
+									<div className={styles.info_container}>
+										<div className={styles.title}>
+											{business?.title}
+										</div>
+										<div className={styles.rating}>
+											{/* {businesses[0]?.rating} ⭐️⭐️⭐️⭐️ */}
+										</div>
+										<div className={styles.description}>
+											{business?.description}
+										</div>
+									</div>
+									<div className={styles.address_container}>
+										<div className={styles.address}>
+											{business?.address}
+										</div>
+										<div className={styles.address}>
+											{business?.city}
+										</div>
+										<div className={styles.address}>
+											{business?.zipCode}
+										</div>
+									</div>
 								</div>
-								<div className={styles.info_container}>
-									<div className={styles.title}>
-										{business?.title}
-									</div>
-									<div className={styles.rating}>
-										{/* {businesses[0]?.rating} ⭐️⭐️⭐️⭐️ */}
-									</div>
-									<div className={styles.description}>
-										{business?.description}
-									</div>
-								</div>
-								<div className={styles.address_container}>
-									<div className={styles.address}>
-										{business?.address}
-									</div>
-									<div className={styles.address}>
-										{business?.city}
-									</div>
-									<div className={styles.address}>
-										{business?.zipCode}
-									</div>
-								</div>
-							</div>
-						);
-					})}
+							);
+						})}
 					{/* <div className={styles.restaurant_container}>
 						<div className={styles.pic_container}>
 							<Link to={`/businesses/${businesses[1]?.id}`}>
